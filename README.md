@@ -1,6 +1,9 @@
 # Online Grocery Store with a Graphical User Interface
 Major project from Programming on the Internet.
 
+## Demo
+http://www-student.it.uts.edu.au/~fanata/
+
 ## Features
 The products in the store for sale is divided into five catregories:
 > Frozen-Food, Fresh-Food, Beverages, Home-Health, Pet-Food
@@ -16,5 +19,5 @@ PHP, MySQL and JavaScript
 ## Collaborators
 https://github.com/jayzh7
 
-## Demo
-http://www-student.it.uts.edu.au/~fanata/
+## Project Structure Conventions
+https://code.tutsplus.com/tutorials/organize-your-next-php-project-the-right-way--net-5873

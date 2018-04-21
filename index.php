@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+<?php include 'resources/config.php' ?>
+<?php include 'resources/templates/header.php' ?>
+
     <?php echo "Hello World!"; ?>
-</body>
-</html>
+
+<?php include 'resources/templates/footer.php' ?>
