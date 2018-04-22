@@ -2,7 +2,7 @@
 Major project from Programming on the Internet.
 
 ## Demo
-http://www-student.it.uts.edu.au/~fanata/
+http://www-student.it.uts.edu.au/~fanata/assignment/online-grocery-store/
 
 ## Features
 The products in the store for sale is divided into five catregories:
