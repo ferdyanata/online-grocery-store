@@ -1,7 +1,7 @@
 <?php
 
 /* @author Ferdy Anata
- * Created: 21/04/2018
+ * Created on: 21/04/2018
  * Description: config.php consists information that is used on every page of this project. This allows us to use these settings throughout  a project because if something changes such as
  * database credentials, or path to a specific resource, we'll only need to update it here.
  */

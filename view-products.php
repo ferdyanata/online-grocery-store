@@ -1,6 +1,6 @@
 <!-- 
 *  @author Ferdy Anata
- * Created: 22/04/2018
+ * Created on: 22/04/2018
  * Description: When users click on a product from the menu, the information will show on the top right hand of the web page.
  *
 -->

@@ -1,6 +1,6 @@
 <!--
 * @author Ferdy Anata
-* Created: 22/04/2018
+* Created on: 22/04/2018
 * Description: The welcome file that divides the frames into three
 -->
 
@@ -34,3 +34,4 @@
         </frameset>
     </frameset>
 </frameset>
+</html>
