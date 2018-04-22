@@ -9,4 +9,5 @@
 
 <p>This is the view-products file</p>
 
+
 <?php include 'resources/templates/footer.php' ?>

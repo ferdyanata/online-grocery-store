@@ -1,3 +1,11 @@
+<!--
+* @author Ferdy Anata
+* Created: 22/04/2018
+* Description: The welcome file that divides the frames into three
+-->
+
+<?php //include 'resources/config.php' ?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
    "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -13,12 +21,14 @@
 -- https://html.com/frames/#Creating_Horizontal_Rows 
 -->
 <frameset id="leftHandFrame" cols="*, *">
-    <!-- Link to products menu-->
+    <!-- Link to products menu -->
     <frame src="view-products.php">
     <frameset rows="*, *">
+        <!-- Link to product details when clicked -->
         <frameset id="topRightHandFrame" rows="*">
                 <frame src="get-products.php">
         </frameset>
+        <!-- Link to when users add items to cart -->
         <frameset id="bottomRightHandFrame" rows="*">
                 <frame src="view-cart.php">              
         </frameset>

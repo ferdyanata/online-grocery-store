@@ -6,7 +6,7 @@
  * database credentials, or path to a specific resource, we'll only need to update it here.
  */
 
-$server = "rerun";
+$server = "rerun.it.uts.edu.au";
 $username = "potiro";
 $password = "pcXZb(kL";
 $dbName = "poti";
