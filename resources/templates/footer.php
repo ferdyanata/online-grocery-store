@@ -1,10 +1,4 @@
+<script src="resources/library/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
-
-<!-- CDN version 
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script> -->
-<script src="resources/library/jquery-3.3.1.slim.min.js"></script>
 </body>
 </html>
