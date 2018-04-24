@@ -1,5 +1,5 @@
 <!-- 
-*  @author Ferdy Anata
+*  @author Ferdy Anata, Zhengjie Huang
  * Created on: 22/04/2018
  * Description: When users click on a product from the menu, the information will show on the top right hand of the web page.
  *
@@ -14,67 +14,178 @@
 
             <ul id="menuBar">
         
-                <li class="mainLinks"><a href="#">Home</a></li>
-                
-                <li class="mainLinks"><a href="#">Products</a>
-                
+                <li class="mainLinks"><image href="#" src= "assets/img/fresh-food.png">
+
+                    <ul class="sub">
+
+                        <li><a href="#">T'Bone Steak</a></li>
+                            
+                        <li><a href="#">Chedder Cheese</a>
+
+                            <ul class="subSub">
+
+                                <li><a href="#">500 Gram </a></li>
+
+                                <li><a href="#">1000 Gram </a></li>
+
+                            </ul>
+                        
+                        <li><a href="#">Navel Oranges</a></li>
+
+                        <li><a href="#">Bananas</a></li>
+
+                        <li><a href="#">Grapes</a></li>
+
+                        <li><a href="#">Apples</a></li>
+
+                        <li><a href="#">Peaches</a></li>
+                    
+                    </ul>
+
+                </li>
+
+                 <li class="mainLinks"><image href="#" src="assets/img/frozen-food.png">
+            
                     <ul id="sub00" class="sub">
                     
-                        <li><a href="#">Motherboards</a></li>
-                    
-                        <li><a href="#">Cooling Options</a>
-                    
+                        <li><a href="#">Sea Food</a>
+
                             <ul id="sub01" class="subSub">
                     
-                                <li><a href="#">Fans</a></li>
+                                <li><a href="#">Fish Fingers(large)</a></li>
                             
-                                <li><a href="#">Liquid Cooling</a></li>
+                                <li><a href="#">Fish Fingers(small)</a></li>
                             
-                                <li><a href="#">Thermal Paste</a></li>		
+                                <li><a href="#">Shelled Prawns</a></li>		
+
+                            </ul>
+                        </li>
+                        <li><a href="#">Milk Products</a>
+                    
+                            <ul id="sub02" class="subSub">
+                    
+                                <li><a href="#">Tub Ice Cream(1L)</a></li>
+                            
+                                <li><a href="#">Tub Ice Cream(2L)</a></li>		
 
                             </ul>
                     
                         </li>
                         
-                        <li><a href="#">Graphics Cards</a></li>
+                        <li><a href="#">Other</a>
                     
-                        <li><a href="#">Accessories</a>
-                    
-                            <ul id="sub02" class="subSub">
+                            <ul id="sub03" class="subSub">
                         
-                                <li><a href="#">Speakers</a></li>
-                                
-                                <li><a href="#">Webcams</a></li>
-                                
-                                <li><a href="#">Headphones</a></li>
+                                <li><a href="#">Hamburger Patties</a></li>
                             
                             </ul>
                         
                         </li>
                     
-                    </ul>
+                    </ul>                    
+                </li>
+        
+
+                <li class="mainLinks"><image href="#" src="assets/img/beverages.png">
+
+                    <ul class="sub">
+
+                        <li><a href="#">Coffee</a>
+
+                            <ul class="subSub">
+
+                                <li><a href="#">200 Gram </a></li>
+
+                                <li><a href="#">500 Gram </a></li>
+
+                            </ul>
+                        
+                        </li>
+                                                
+                        <li><a href="#">Earl Grey Tea Bags</a>
+
+                            <ul class="subSub">
+
+                                <li><a href="#">Pack 25 </a></li>
+
+                                <li><a href="#">Pack 100 </a></li>
+
+                                <li><a href="#">Pack 200 </a></li>
+
+                            </ul>
+                        
+                        </li>
+                        
+                        <li><a href="#">Chocolate bar</a></li>
                     
+                    </ul>
+
                 </li>
                 
-                <li class="mainLinks"><a href="#">Support</a></li>
+                <li class="mainLinks"><image href="#" src="assets/img/home-health.png" >
                 
-                <li class="mainLinks"><a href="#">Community</a>
-                
-                    <ul id="sub03" class="sub">
-                    
-                        <li><a href="#">Forums</a></li>
+                    <ul class="sub">
+
+                        <li><a href="#">Bath Soap</a></li>
+
+                        <li><a href="#">Panadol</a>
+
+                            <ul class="subSub">
+
+                                <li><a href="#">Pack 24 </a></li>
+
+                                <li><a href="#">Bottle 50 </a></li>
+
+                            </ul>
                         
-                        <li><a href="#">Profile</a></li>
+                        </li>
+
+                        <li><a href="#">Washing powder</a></li>
+                                                
+                        <li><a href="#">Garbage Bags</a>
+
+                            <ul class="subSub">
+
+                                <li><a href="#">small(pack10) </a></li>
+
+                                <li><a href="#">large(pack50) </a></li>
+
+                            </ul>
                         
-                        <li><a href="#">Messaging</a></li>		
+                        </li>
+                        
+                        <li><a href="#">Laundry Bleach</a></li>
                     
                     </ul>
-                
+
                 </li>
+
+                <li class="mainLinks"><image href="#" src="assets/img/pet-food.png" > 
                 
-                <li class="mainLinks"><a href="#">Partners</a></li>		
+                    <ul id="sub09" class="sub">
+                    
+                        <li><a href="#">Bird Food</a></li>
+                        
+                        <li><a href="#">Cat Food</a></li>
+                        
+                        <li><a href="#">Dry Dog Food</a>
+                            <ul class="subSub">
+
+                                <li><a href="#"> 1 kg Pack </a></li>
+
+                                <li><a href="#"> 5 kg Pack </a></li>
+
+                            </ul>
+                        </li>		
+                    
+                        <li><a href="#">Fish Food</a></li>
+
+                    </ul>
+                
+                </li>	
         
             </ul>
+
             
             </div>
     

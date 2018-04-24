@@ -8,4 +8,5 @@
 
 <p>This is the get-products file</p>
 
+
 <?php include 'resources/templates/footer.php' ?>
