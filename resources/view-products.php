@@ -5,17 +5,18 @@
  *
 -->
 
-<?php include 'resources/templates/header.php' ?>
+<?php include 'includes/header.php' ?>
 
 <p>This is the view-products file</p>
+
 <div id="container">
 		
         <div id="menu">
 
             <ul id="menuBar">
         
-                <li class="mainLinks"><image href="#" src= "assets/img/fresh-food.png">
-
+                <li class="mainLinks">
+                    <img href="#" src= "../assets/img/fresh-food.png">
                     <ul class="sub">
 
                         <li><a href="#">T'Bone Steak</a></li>
@@ -44,7 +45,8 @@
 
                 </li>
 
-                 <li class="mainLinks"><image href="#" src="assets/img/frozen-food.png">
+                 <li class="mainLinks">
+                    <img href="#" src="../assets/img/frozen-food.png">
             
                     <ul id="sub00" class="sub">
                     
@@ -86,7 +88,8 @@
                 </li>
         
 
-                <li class="mainLinks"><image href="#" src="assets/img/beverages.png">
+                <li class="mainLinks">
+                    <img href="#" src="../assets/img/beverages.png">
 
                     <ul class="sub">
 
@@ -122,7 +125,8 @@
 
                 </li>
                 
-                <li class="mainLinks"><image href="#" src="assets/img/home-health.png" >
+                <li class="mainLinks">
+                    <img href="#" src="../assets/img/home-health.png" >
                 
                     <ul class="sub">
 
@@ -160,7 +164,8 @@
 
                 </li>
 
-                <li class="mainLinks"><image href="#" src="assets/img/pet-food.png" > 
+                <li class="mainLinks">
+                    <img href="#" src="../assets/img/pet-food.png" > 
                 
                     <ul id="sub09" class="sub">
                     
@@ -191,4 +196,4 @@
     
     </div>
 
-<?php include 'resources/templates/footer.php' ?>
+<?php include 'includes/footer.php' ?>

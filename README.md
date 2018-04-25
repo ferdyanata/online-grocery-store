@@ -17,7 +17,7 @@ The products in the store for sale is divided into five catregories:
 PHP, MySQL and JavaScript
 
 ## Collaborators
-https://github.com/jayzh7
+[Jay Zh](https://github.com/jayzh7)
 
 ## Project Structure Conventions
 https://code.tutsplus.com/tutorials/organize-your-next-php-project-the-right-way--net-5873

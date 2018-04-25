@@ -22,15 +22,15 @@
 -->
 <frameset id="leftHandFrame" cols="*, *">
     <!-- Link to products menu -->
-    <frame src="view-products.php">
+    <frame src="resources/view-products.php">
     <frameset rows="*, *">
         <!-- Link to product details when clicked -->
         <frameset id="topRightHandFrame" rows="*">
-                <frame src="get-products.php">
+                <frame src="resources/get-products.php">
         </frameset>
         <!-- Link to when users add items to cart -->
         <frameset id="bottomRightHandFrame" rows="*">
-                <frame src="view-cart.php">              
+                <frame src="resources/view-cart.php">              
         </frameset>
     </frameset>
 </frameset>
