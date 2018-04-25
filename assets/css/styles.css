@@ -31,16 +31,17 @@
     list-style-type: none;
 }
 
-
 .sub li a {
     display: block;
     float: none;
     border: 1px solid black;
     text-decoration: none;
 }
+
 ul.sub li {
     position: relative;
 }
+
 .subSub {
     position: absolute;
     background: transparent;
@@ -55,5 +56,4 @@ ul.sub li {
     display: block;
     float: none;
     width: 100px;
-    
 }
