@@ -5,14 +5,17 @@
  *
 -->
 
-<?php include 'config.php' ?>
-<?php include 'includes/header.php' ?>
+<?php include_once 'config.php' ?>
+<?php include_once 'includes/header.php' ?>
 
 <p>This is the view-products file</p>
 
 <?php
 
-$num_rows=mysqli_num_rows($result);
+$query_string = "SELECT * FROM products";
+ 
+$result=mysqli_query($connection, $query_string);
+$num_rows = mysqli_num_rows($result);
 
 echo "Displaying products using associative array";
 
@@ -33,28 +36,23 @@ mysqli_close($connection);
 
 ?>
 
-<div id="container">
-		
-        <div id="menu">
+<?php  ?>
 
+<form action="get-products.php" method="GET">
+<div id="container">
+        <div id="menu">
             <ul id="menuBar">
-        
                 <li class="mainLinks">
                     <img href="#" src= "../assets/img/fresh-food.png">
                     <ul class="sub">
-
-                        <li><a href="https://www.youtube.com" target="_blank">T'Bone Steak</a></li>
-                            
-                        <li><a href="#">Chedder Cheese</a>
-
+                        <li><input type="submit" name="t_bone_steak" value="T'Bone Steak"><a href="">T'Bone Steak</a></li>    
+                        <li>
+                            <a href="#">Chedder Cheese</a>
                             <ul class="subSub">
-
                                 <li><a href="#">500 Gram </a></li>
-
                                 <li><a href="#">1000 Gram </a></li>
-
                             </ul>
-                        
+                        </li>
                         <li><a href="#">Navel Oranges</a></li>
 
                         <li><a href="#">Bananas</a></li>
@@ -211,13 +209,12 @@ mysqli_close($connection);
 
                     </ul>
                 
-                </li>	
+                </li>
         
             </ul>
-
-            
-            </div>
-    
+        
+            </div>  
     </div>
+</form>
 
-<?php include 'includes/footer.php' ?>
+<?php include_once 'includes/footer.php' ?>

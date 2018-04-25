@@ -20,9 +20,3 @@ if (!$connection) {
 }
 ?>
 <br>
-<?php
-$query_string = "select * from products";
- 
-$result=mysqli_query($connection, $query_string);
-
-?>

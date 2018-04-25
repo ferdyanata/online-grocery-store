@@ -26,11 +26,11 @@
     <frameset rows="*, *">
         <!-- Link to product details when clicked -->
         <frameset id="topRightHandFrame" rows="*">
-                <frame src="resources/get-products.php">
+            <frame src="resources/get-products.php">
         </frameset>
         <!-- Link to when users add items to cart -->
         <frameset id="bottomRightHandFrame" rows="*">
-                <frame src="resources/view-cart.php">              
+            <frame src="resources/view-cart.php">              
         </frameset>
     </frameset>
 </frameset>
