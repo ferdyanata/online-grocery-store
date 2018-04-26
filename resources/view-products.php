@@ -12,40 +12,38 @@
 
 <?php
 
-$query_string = "SELECT * FROM products";
+// $query_string = "SELECT * FROM products";
  
-$result=mysqli_query($connection, $query_string);
-$num_rows = mysqli_num_rows($result);
+// $result=mysqli_query($connection, $query_string);
+// $num_rows = mysqli_num_rows($result);
 
-echo "Displaying products using associative array";
+// echo "Displaying products using associative array";
 
 // mysqli_fetch_assoc: This function will return a row as an associative array where the column names will be the keys storing corresponding value.
-if ($num_rows > 0 ) {
-    print "<table border='0'>";
-     while ( $a_row = mysqli_fetch_assoc($result) ) {
-         print "<tr>\n";
-         foreach ($a_row as $field){
-            print "\t<td>{$field}</td>\n";    
-         }
-         print "</tr>";
-    }
-    print "</table>";
-}
+// if ($num_rows > 0 ) {
+//     print "<table border='0'>";
+//      while ( $a_row = mysqli_fetch_assoc($result) ) {
+//          print "<tr>\n";
+//          foreach ($a_row as $field){
+//             print "\t<td>{$field}</td>\n";    
+//          }
+//          print "</tr>";
+//     }
+//     print "</table>";
+// }
  
-mysqli_close($connection);   
+// mysqli_close($connection);   
 
 ?>
 
-<?php  ?>
-
-<form action="get-products.php" method="GET">
+<form action="get-products.php" method="POST" target="">
 <div id="container">
         <div id="menu">
             <ul id="menuBar">
                 <li class="mainLinks">
                     <img href="#" src= "../assets/img/fresh-food.png">
                     <ul class="sub">
-                        <li><input type="submit" name="t_bone_steak" value="T'Bone Steak"><a href="">T'Bone Steak</a></li>    
+                        <li><input type="submit" name="bone-steak" value="T'Bone Steak"></li>    
                         <li>
                             <a href="#">Chedder Cheese</a>
                             <ul class="subSub">
@@ -177,7 +175,6 @@ mysqli_close($connection);
                                 <li><a href="#">large(pack50) </a></li>
 
                             </ul>
-                        
                         </li>
                         
                         <li><a href="#">Laundry Bleach</a></li>
@@ -216,5 +213,7 @@ mysqli_close($connection);
             </div>  
     </div>
 </form>
+
+<!-- <iframe name="my-get-products" src="get-products.php" frameborder="0"></iframe> -->
 
 <?php include_once 'includes/footer.php' ?>

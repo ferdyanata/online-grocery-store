@@ -17,19 +17,19 @@
     <title>Grocery Store</title>
 </head>
 <!-- 
--- Reference: To help create the frames, we used this guide from 
--- https://html.com/frames/#Creating_Horizontal_Rows 
+    Reference: To help create the frames, we used this guide from 
+     https://html.com/frames/#Creating_Horizontal_Rows 
 -->
-<frameset id="leftHandFrame" cols="*, *">
+<frameset id="leftFrame" cols="*, *">
     <!-- Link to products menu -->
     <frame src="resources/view-products.php">
     <frameset rows="*, *">
         <!-- Link to product details when clicked -->
-        <frameset id="topRightHandFrame" rows="*">
+        <frameset id="topRightFrame" rows="*">
             <frame src="resources/get-products.php">
         </frameset>
         <!-- Link to when users add items to cart -->
-        <frameset id="bottomRightHandFrame" rows="*">
+        <frameset id="bottomRightFrame" rows="*">
             <frame src="resources/view-cart.php">              
         </frameset>
     </frameset>
