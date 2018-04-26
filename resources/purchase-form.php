@@ -1,5 +1,5 @@
-<?php include_once 'resources/config.php' ?>
-<?php include_once 'resources/includes/header.php' ?>
+<?php include_once 'config.php' ?>
+<?php include_once 'includes/header.php' ?>
 
 
 <form id="checkoutForm" action="<?php $_SERVER['PHP_SELF']?>" method="GET">
@@ -77,4 +77,4 @@
     mail($to,$subject,$message,$headers);
 ?>
 
-<?php include_once 'resources/includes/footer.php' ?>
+<?php include_once 'includes/footer.php' ?>
