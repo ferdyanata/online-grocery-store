@@ -36,7 +36,7 @@
 
 ?>
 
-<form action="get-products.php" method="POST" target="">
+<form action="get-products.php" method="GET" target="my-get-products">
 <div id="container">
         <div id="menu">
             <ul id="menuBar">
@@ -213,7 +213,5 @@
             </div>  
     </div>
 </form>
-
-<!-- <iframe name="my-get-products" src="get-products.php" frameborder="0"></iframe> -->
 
 <?php include_once 'includes/footer.php' ?>

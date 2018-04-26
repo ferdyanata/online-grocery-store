@@ -11,11 +11,9 @@
 
 <?php 
 
-if($_POST['bone-steak']){
-    echo $_POST['bone-steak'];
-}
+$steak = $_GET['bone-steak'];
 
-
+    echo $steak;
 
 ?>
 
