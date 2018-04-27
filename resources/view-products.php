@@ -5,6 +5,9 @@
  *
 -->
 
+<!-- display product menu
+-->
+
 <?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 
@@ -23,7 +26,8 @@
                 <li class="mainLinks">
                     <img href="#" src= "../assets/img/fresh-food.png">
                     <ul class="sub">
-                        <li><input type="image" name="productId" value="3002" src="../assets/img/3002.jpg"></li>      
+                        <li value="3002" onclick="javascript:displayDetails(this.value)"><a href="#">T'Bone Steak</a></li>
+      
                         <li>
                             <a href="#">Chedder Cheese</a>
                             <ul class="subSub">
