@@ -4,26 +4,10 @@
 * Description: The welcome file that divides the frames into three
 -->
 
-<?php include_once 'resources/config.php' ?>
-<?php include_once 'resources/includes/header.php' ?>
+<?php //include 'resources/config.php' ?>
 
-<div class="container" id="leftFrame">
-    <p>This is left frame</p>
-    <form action="<?php $_SERVER['PHP_SELF']?>" method="GET">
-        <div id="menu">
-            <ul id="menuBar">
-                <li class="mainLinks">
-                    <img href="#" src= "assets/img/fresh-food.png">
-                    <ul class="sub">
-                        <li><input type="submit" name="t_bone_steak" value="T'Bone Steak"></li>    
-                        <li>
-                            <a href="#">Chedder Cheese</a>
-                            <ul class="subSub">
-                                <li><a href="#">500 Gram </a></li>
-                                <li><a href="#">1000 Gram </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Navel Oranges</a></li>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+   "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
 <head>
