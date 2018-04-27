@@ -1,5 +1,5 @@
 /*
- * Styling for the hovering buttons section. 
+ * Hovering over the menu of products
 */
 .mainLinks {
     width: 150px;
@@ -57,3 +57,7 @@ ul.sub li {
     float: none;
     width: 100px;
 }
+
+/* 
+ * 
+ */
