@@ -39,7 +39,9 @@
 <!-- @desc Using target attribute allows us to send data from any submit input to another page,
     in one page. 
     'index-get-products' is a name that is set in index.php that refers to the frame we're sending
-    data to. -->
+    data to. 
+    Source: https://css-tricks.com/snippets/html/post-data-to-an-iframe/
+    -->
 <form action="get-products.php" method="GET" target="index-get-products">
 <div id="container">
         <div id="menu">
