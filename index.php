@@ -22,14 +22,14 @@
 -->
 <frameset id="leftFrame" cols="*, *" frameborder="0">
     <!-- Link to products menu -->
-    <frame src="resources/view-products.php" frameborder="0">
+    <frame src="resources/view-products.php" frameborder="0" name="index-view-products">
     <frameset rows="*, *">
         <!-- Link to product details when clicked -->
         <frameset id="topRightFrame" rows="*">
-            <frame src="resources/get-products.php" frameborder="0" name="my-get-products">
+            <frame src="resources/get-products.php" frameborder="0" name="index-get-products">
         </frameset>
         <!-- Link to when users add items to cart -->
-        <frameset id="bottomRightFrame" rows="*" frameborder="0" name="my-view-cart">
+        <frameset id="bottomRightFrame" rows="*" frameborder="0" name="index-view-cart">
             <frame src="resources/view-cart.php">              
         </frameset>
     </frameset>
