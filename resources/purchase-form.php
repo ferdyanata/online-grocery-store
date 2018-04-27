@@ -2,12 +2,12 @@
 <?php include_once 'includes/header.php' ?>
 
 
-<form id="checkoutForm" action="<?php $_SERVER['PHP_SELF']?>" method="GET">
+<form id="checkoutForm" action="<?php $_SERVER['PHP_SELF']?>" method="POST">
 <table>
     <h4>Shipping Information</h4>
     <tr>
         <td><label for="first-name">First Name</label></td>
-        <td><input type="text" id="first-name" placeholder="First Name"></td>
+        <td><input type="text" id="first-name" placeholder="First Name" size="20" maxlength="20"></td>
     </tr>
     <tr>
         <td><label for="last-name">Last Name</label></td>
@@ -41,7 +41,7 @@
 </form>
 
 <?php
-    
+    // Test code for email
     $to = "ferdy.anata@gmail.com";
     $subject = "HTML email";
     
