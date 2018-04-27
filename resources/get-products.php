@@ -11,9 +11,16 @@
 
 <?php 
 
-$steak = $_GET['bone-steak'];
+$productId = $_GET['productId'];
+echo $productId;
 
-    echo $steak;
+$query_string = 'SELECT * FROM products WHERE product_id='.$productId;
+echo $query_string;
+// $result = mysqli_result($query_string);
+$result = mysqli_query($connection, $query_string);
+$row = mysqli_fetch_assoc($result);
+
+echo "product name:".$row['product_name']."unit price: ".$row['unit_price'];
 
 ?>
 

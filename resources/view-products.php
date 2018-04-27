@@ -49,7 +49,7 @@
                 <li class="mainLinks">
                     <img href="#" src= "../assets/img/fresh-food.png">
                     <ul class="sub">
-                        <li><input type="submit" name="bone-steak" value="T'Bone Steak"></li>    
+                        <li><input type="submit" name="productId" value="3002"></li>    
                         <li>
                             <a href="#">Chedder Cheese</a>
                             <ul class="subSub">
