@@ -10,32 +10,6 @@
 
 <p>This is the view-products file</p>
 
-<?php
-
-// $query_string = "SELECT * FROM products";
- 
-// $result=mysqli_query($connection, $query_string);
-// $num_rows = mysqli_num_rows($result);
-
-// echo "Displaying products using associative array";
-
-// mysqli_fetch_assoc: This function will return a row as an associative array where the column names will be the keys storing corresponding value.
-// if ($num_rows > 0 ) {
-//     print "<table border='0'>";
-//      while ( $a_row = mysqli_fetch_assoc($result) ) {
-//          print "<tr>\n";
-//          foreach ($a_row as $field){
-//             print "\t<td>{$field}</td>\n";    
-//          }
-//          print "</tr>";
-//     }
-//     print "</table>";
-// }
- 
-// mysqli_close($connection);   
-
-?>
-
 <!-- @desc Using target attribute allows us to send data from any submit input to another page,
     in one page. 
     'index-get-products' is a name that is set in index.php that refers to the frame we're sending
