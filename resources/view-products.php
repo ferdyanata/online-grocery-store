@@ -5,13 +5,9 @@
  *
 -->
 
-<!-- display product menu
--->
-
-<?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 
-<p>This is the view-products file</p>
+<p>view-products page</p>
 
 <!-- @desc Using target attribute allows us to send data from any submit input to another page,
     in one page. 
@@ -24,18 +20,23 @@
         <div id="menu">
             <ul id="menuBar">
                 <li class="mainLinks">
-                    <img href="#" src= "../assets/img/fresh-food.png">
+                    <!-- 
+                        @desc
+                        displayDetails() queries data from product-details.php file
+                    -->
+                    <img src= "../assets/img/fresh-food.png">
                     <ul class="sub">
-                        <li value="3002" onclick="javascript:displayDetails(this.value)"><a href="#">T'Bone Steak</a></li>
-      
                         <li>
-                            <a href="#">Chedder Cheese</a>
-                            <ul class="subSub">
-                                <li><a href="#">500 Gram </a></li>
-                                <li><a href="#">1000 Gram </a></li>
-                            </ul>
+                            <button value="3002" onclick="javascript:displayDetails(this.value)">T'Bone Steak</button>                            
                         </li>
-                        <li><a href="#">Navel Oranges</a></li>
+                        <li>
+                        <button>Cheddar Cheese</button>     
+                        <ul class="subSub">
+                            <li><button value="3000" onclick="javascript:displayDetails(this.value)">500 Gram</button></li>
+                            <li><button value="3001" onclick="javascript:displayDetails(this.value)">1000 Gram</button></li>
+                        </ul>
+                        </li>
+                        <li><a href="#">Navel Oranges</a></li> 
 
                         <li><a href="#">Bananas</a></li>
 

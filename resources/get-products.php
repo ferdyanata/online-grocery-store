@@ -6,6 +6,7 @@
 <?php include_once 'includes/header.php' ?>
 <!-- display product details
 -->
-<div id="product-details">This is the get-products file</div>
+<p>get-products page</p>
+<div id="product-details"></div>
 
 <?php include_once 'includes/footer.php' ?>

@@ -11,6 +11,7 @@ $(document).ready(function() {
     $('.subSub').hide();
 
     $('#menu li').hover(
+        // slideToggle(350) refers to animation speed.
         function() {
             $(this).children('.sub').stop().slideToggle(350);
         },
@@ -38,7 +39,7 @@ $(document).ready(function() {
  * 2. Price
  * 3. Enter quantity amount to add to cart
  * @param {*} productId 
- * Retrieve product id from value attribute
+ * Retrieves product id from value attribute
  */
 function displayDetails(productId)
 {
@@ -57,7 +58,7 @@ function displayDetails(productId)
             var ajaxDisplay = parent.frames["index-get-products"].document.getElementById("product-details");
             ajaxDisplay.innerHTML = xhttp.responseText;
         } 
-    } 
+    }
 
     xhttp.open("GET", "product-details.php?productId=" + productId, true); 
     xhttp.send();

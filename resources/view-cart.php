@@ -7,6 +7,6 @@
 <?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 
-<p>This is the view-cart file</p>
+<p>view-cart page</p>
 
 <?php include_once 'includes/footer.php' ?>
