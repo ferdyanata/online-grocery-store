@@ -14,6 +14,16 @@ $row = mysqli_fetch_assoc($result);
 
 echo  "product name:".$row['product_name']."<br>unit price: ".$row['unit_price'].
 "<br>unit quantity: ".$row['unit_quantity']."<br>in stock: ".$row['in_stock'];
+
+echo "<table>" .
+        "<tr>" .
+        "<td style='font-weight: bold;'>" . $row['product_name'] . "</td>" .
+        "</tr>".
+        "<tr>" .         
+        "<td>$". $row['unit_price'] . "</td>" .
+        "</tr>".
+     "</table>";
  
 mysqli_close($connection);
+
 ?>
