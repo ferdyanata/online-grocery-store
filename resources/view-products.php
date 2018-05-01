@@ -27,24 +27,21 @@
                     <img src= "../assets/img/fresh-food.png">
                     <ul class="sub">
                         <li>
-                            <li value="3002" onclick="javascript:displayDetails(this.value)"><a href="#">T'Bone Steak </a></li> 
+                            <a href="#">Chedder Cheese</a>
+                            <ul class="subSub">
+                                <li value="3000" onclick="javascript:displayDetails(this.value)"><a href="#">500 Gram </a></li>
+                                <li value="3001" onclick="javascript:displayDetails(this.value)"><a href="#">1000 Gram </a></li>
+                            </ul>
                         </li>
-                        <li>
-                        <a href="#">Cheddar Cheese</a>
-                        <ul class="subSub">
-                            <li value="3000" onclick="javascript:displayDetails(this.value)"><a href="#">500 Gram </a></li> 
-                            <li value="3001" onclick="javascript:displayDetails(this.value)"><a href="#">1000 Gram </a></li>
-                        </ul>
-                        </li>
-                        <li><a href="#">Navel Oranges</a></li> 
+                        <li value="3003" onclick="javascript:displayDetails(this.value)"><a href="#">Navel Oranges</a></li>
 
-                        <li><a href="#">Bananas</a></li>
+                        <li value="3004" onclick="javascript:displayDetails(this.value)"><a href="#">Bananas</a></li>
 
-                        <li><a href="#">Grapes</a></li>
+                        <li value="3006" onclick="javascript:displayDetails(this.value)"><a href="#">Grapes</a></li>
 
-                        <li><a href="#">Apples</a></li>
+                        <li value="3007" onclick="javascript:displayDetails(this.value)"><a href="#">Apples</a></li>
 
-                        <li><a href="#">Peaches</a></li>
+                        <li value="3005" onclick="javascript:displayDetails(this.value)"><a href="#">Peaches</a></li>
                     
                     </ul>
 
@@ -59,11 +56,11 @@
 
                             <ul id="sub01" class="subSub">
                     
-                                <li><a href="#">Fish Fingers(large)</a></li>
+                                <li value="1001" onclick="javascript:displayDetails(this.value)"><a href="#">Fish Fingers(large)</a></li>
                             
-                                <li><a href="#">Fish Fingers(small)</a></li>
+                                <li value="1000" onclick="javascript:displayDetails(this.value)"><a href="#">Fish Fingers(small)</a></li>
                             
-                                <li><a href="#">Shelled Prawns</a></li>		
+                                <li value="1003" onclick="javascript:displayDetails(this.value)"><a href="#">Shelled Prawns</a></li>		
 
                             </ul>
                         </li>
@@ -71,9 +68,9 @@
                     
                             <ul id="sub02" class="subSub">
                     
-                                <li><a href="#">Tub Ice Cream(1L)</a></li>
+                                <li value="1004" onclick="javascript:displayDetails(this.value)"><a href="#">Tub Ice Cream(1L)</a></li>
                             
-                                <li><a href="#">Tub Ice Cream(2L)</a></li>		
+                                <li value="1005" onclick="javascript:displayDetails(this.value)"><a href="#">Tub Ice Cream(2L)</a></li>		
 
                             </ul>
                     
@@ -83,7 +80,7 @@
                     
                             <ul id="sub03" class="subSub">
                         
-                                <li><a href="#">Hamburger Patties</a></li>
+                                <li value="1002" onclick="javascript:displayDetails(this.value)"><a href="#">Hamburger Patties</a></li>
                             
                             </ul>
                         
@@ -102,9 +99,9 @@
 
                             <ul class="subSub">
 
-                                <li><a href="#">200 Gram </a></li>
+                                <li value="4003" onclick="javascript:displayDetails(this.value)"><a href="#">200 Gram </a></li>
 
-                                <li><a href="#">500 Gram </a></li>
+                                <li value="4004" onclick="javascript:displayDetails(this.value)"><a href="#">500 Gram </a></li>
 
                             </ul>
                         
@@ -114,17 +111,17 @@
 
                             <ul class="subSub">
 
-                                <li><a href="#">Pack 25 </a></li>
+                                <li value="4000" onclick="javascript:displayDetails(this.value)"><a href="#">Pack 25 </a></li>
 
-                                <li><a href="#">Pack 100 </a></li>
+                                <li value="4001" onclick="javascript:displayDetails(this.value)"><a href="#">Pack 100 </a></li>
 
-                                <li><a href="#">Pack 200 </a></li>
+                                <li value="4002" onclick="javascript:displayDetails(this.value)"><a href="#">Pack 200 </a></li>
 
                             </ul>
                         
                         </li>
                         
-                        <li><a href="#">Chocolate bar</a></li>
+                        <li value="4005" onclick="javascript:displayDetails(this.value)"><a href="#">Chocolate bar</a></li>
                     
                     </ul>
 
@@ -135,34 +132,34 @@
                 
                     <ul class="sub">
 
-                        <li><a href="#">Bath Soap</a></li>
+                        <li value="2002" onclick="javascript:displayDetails(this.value)"><a href="#">Bath Soap</a></li>
 
                         <li><a href="#">Panadol</a>
 
                             <ul class="subSub">
 
-                                <li><a href="#">Pack 24 </a></li>
+                                <li value="2000" onclick="javascript:displayDetails(this.value)"><a href="#">Pack 24 </a></li>
 
-                                <li><a href="#">Bottle 50 </a></li>
+                                <li value="2001" onclick="javascript:displayDetails(this.value)"><a href="#">Bottle 50 </a></li>
 
                             </ul>
                         
                         </li>
 
-                        <li><a href="#">Washing powder</a></li>
+                        <li value="2005" onclick="javascript:displayDetails(this.value)"><a href="#">Washing powder</a></li>
                                                 
-                        <li><a href="#">Garbage Bags</a>
+                        <li ><a href="#">Garbage Bags</a>
 
                             <ul class="subSub">
 
-                                <li><a href="#">small(pack10) </a></li>
+                                <li value="2003" onclick="javascript:displayDetails(this.value)"><a href="#">small(pack10) </a></li>
 
-                                <li><a href="#">large(pack50) </a></li>
+                                <li value="2004" onclick="javascript:displayDetails(this.value)"><a href="#">large(pack50) </a></li>
 
                             </ul>
                         </li>
                         
-                        <li><a href="#">Laundry Bleach</a></li>
+                        <li value="2006" onclick="javascript:displayDetails(this.value)"><a href="#">Laundry Bleach</a></li>
                     
                     </ul>
 
@@ -173,21 +170,21 @@
                 
                     <ul id="sub09" class="sub">
                     
-                        <li><a href="#">Bird Food</a></li>
+                        <li value="5002" onclick="javascript:displayDetails(this.value)"><a href="#">Bird Food</a></li>
                         
-                        <li><a href="#">Cat Food</a></li>
+                        <li value="5003" onclick="javascript:displayDetails(this.value)"><a href="#">Cat Food</a></li>
                         
                         <li><a href="#">Dry Dog Food</a>
                             <ul class="subSub">
 
-                                <li><a href="#"> 1 kg Pack </a></li>
+                                <li value="5001" onclick="javascript:displayDetails(this.value)"><a href="#"> 1 kg Pack </a></li>
 
-                                <li><a href="#"> 5 kg Pack </a></li>
+                                <li value="5000" onclick="javascript:displayDetails(this.value)"><a href="#"> 5 kg Pack </a></li>
 
                             </ul>
                         </li>		
                     
-                        <li><a href="#">Fish Food</a></li>
+                        <li value="5004" onclick="javascript:displayDetails(this.value)"><a href="#">Fish Food</a></li>
 
                     </ul>
                 
