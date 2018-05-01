@@ -26,6 +26,7 @@
                     -->
                     <img src= "../assets/img/fresh-food.png">
                     <ul class="sub">
+                       <li value="3002" onclick="javascript:displayDetails(this.value)"><a href="#">T'Bone Steak</a></li>
                         <li>
                             <a href="#">Chedder Cheese</a>
                             <ul class="subSub">
