@@ -4,7 +4,6 @@
 * Description: Displays products on the left hand side of the web page where users will be able to choose amongst five categories.
 -->
 
-<?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 
 <p>view-cart page</p>

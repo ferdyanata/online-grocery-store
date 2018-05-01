@@ -16,6 +16,7 @@ $row = mysqli_fetch_assoc($result);
 echo "<table>" .
         "<tr>" .
         "<td style='font-weight: bold;'>" . $row['product_name'] . "</td>" .
+        "<td style='font-weight: bold;'>" . $row['unit_quantity'] . "</td>" . 
         "</tr>".
         "<tr>" .         
         "<td>$". $row['unit_price'] . "</td>" .
