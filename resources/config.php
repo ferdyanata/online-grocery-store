@@ -14,9 +14,7 @@ $dbName = "poti";
 $connection = mysqli_connect($server, $username, $password, $dbName);
 if (!$connection) {
     die("Database connection failed: " . mysqli_connect_error());
-} else {
-    // The print below needs to be removed upon final project phase. This is only temporary to make sure that database is running.
-    print "MySQL successfully connected";
-}
-?>
+} else { ?>
+    <script>console.log "MySQL successfully connected";</script>
+<?php } ?>
 <br>
