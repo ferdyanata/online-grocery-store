@@ -13,7 +13,9 @@ $query_string = 'SELECT * FROM products WHERE product_id='.$productId;
 $result = mysqli_query($connection, $query_string);
 $row = mysqli_fetch_assoc($result);
 
-echo "<table>" .
+echo
+"<form action='view-cart.php?action=add&code=".$productId. "'"." method='POST' "."target=index-view-cart>" .
+    "<table>" .
         "<tr>" .
         "<td style='font-weight: bold;'>" . $row['product_name'] . "</td>" .
         "<td style='font-weight: bold;'>" . $row['unit_quantity'] . "</td>" . 
@@ -21,8 +23,10 @@ echo "<table>" .
         "<tr>" .         
         "<td>$". $row['unit_price'] . "</td>" .
         "</tr>".
-     "</table>";
- 
+     "</table>" .
+    "<div><input type='submit' value='Add to cart'></div>" .
+"</form>";
+      
 mysqli_close($connection);
 
 ?>
