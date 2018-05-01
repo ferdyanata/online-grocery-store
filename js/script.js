@@ -3,7 +3,8 @@
     Author     : Ferdy
 */
 /**
- * @description: Functions to display/hide products depending on the state
+ * @desc
+ * Functions to display/hide products depending on the state
  */
 $(document).ready(function() {
     $('.sub').hide();
@@ -29,3 +30,34 @@ $(document).ready(function() {
         }
     );
 });
+
+/**
+ * @desc
+ * Displays details of product when user clicks a button including
+ * 1. Product name
+ * 2. Price
+ * 3. In stock
+ * @param {*} productId 
+ * Retrieve product id from value attribute
+ */
+function displayDetails(productId)
+{
+    var xhttp; 
+    if (window.XMLHttpRequest) { 
+        xhttp = new XMLHttpRequest(); 
+    } else { 
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+    } 
+
+    xhttp.onreadystatechange = function() { 
+        if (this.readyState == 4 && this.status == 200) {
+            // Get parent of index-get-products, which is view-products page
+            // Get query from product-details
+            var ajaxDisplay = parent.frames["index-get-products"].document.getElementById("product-details");
+            ajaxDisplay.innerHTML = xhttp.responseText;
+        } 
+    } 
+
+    xhttp.open("GET", "product-details.php?productId=" + productId, true); 
+    xhttp.send();
+}
