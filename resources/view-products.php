@@ -27,13 +27,13 @@
                     <img src= "../assets/img/fresh-food.png">
                     <ul class="sub">
                         <li>
-                            <button value="3002" onclick="javascript:displayDetails(this.value)">T'Bone Steak</button>                            
+                            <li value="3002" onclick="javascript:displayDetails(this.value)"><a href="#">T'Bone Steak </a></li> 
                         </li>
                         <li>
-                        <button>Cheddar Cheese</button>     
+                        <a href="#">Cheddar Cheese</a>
                         <ul class="subSub">
-                            <li><button value="3000" onclick="javascript:displayDetails(this.value)">500 Gram</button></li>
-                            <li><button value="3001" onclick="javascript:displayDetails(this.value)">1000 Gram</button></li>
+                            <li value="3000" onclick="javascript:displayDetails(this.value)"><a href="#">500 Gram </a></li> 
+                            <li value="3001" onclick="javascript:displayDetails(this.value)"><a href="#">1000 Gram </a></li>
                         </ul>
                         </li>
                         <li><a href="#">Navel Oranges</a></li> 
