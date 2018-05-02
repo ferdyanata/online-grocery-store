@@ -19,10 +19,9 @@ $db_handle = new DBController();
 if(!empty($_GET["action"])) {
     switch($_GET["action"]) {
 	    case "add":
-
-		    #if(!empty($_POST["quantity"])) {
+		    if(!empty($_POST["quantity"])) {
 			    $product = $db_handle->runQuery("SELECT * FROM products WHERE product_id=" . $_GET["code"]);
-			    $itemArray = array($product["product_id"]=>array('product_name'=>$product["product_name"], 'product_id'=>$product["product_id"], 'quantity'=>1, 'unit_price'=>$product["unit_price"]));
+			    $itemArray = array($product["product_id"]=>array('product_name'=>$product["product_name"], 'product_id'=>$product["product_id"], 'quantity'=>$_POST["quantity"], 'unit_price'=>$product["unit_price"]));
 			
                 if(!empty($_SESSION["cart_item"])) {
                     if(in_array($product["product_id"],array_keys($_SESSION["cart_item"]))) {
@@ -31,7 +30,7 @@ if(!empty($_GET["action"])) {
                                 #if (empty($_SESSION["cart_item"][$key]["quantity"])) {
                                 #    $_SESSION["cart_item"][$key]["quantity"] = 0;
                                 #}
-                                $_SESSION["cart_item"][$key]['quantity'] += 1;
+                                $_SESSION["cart_item"][$key]['quantity'] += $_POST["quantity"];
                             }
                         }
                         
@@ -45,7 +44,7 @@ if(!empty($_GET["action"])) {
                 } else {
                     $_SESSION["cart_item"] = $itemArray;
                 }
-            #}
+            }
             break;
         case "empty":
             unset($_SESSION["cart_item"]);

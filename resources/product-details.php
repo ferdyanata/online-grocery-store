@@ -24,6 +24,7 @@ echo
         "<td>$". $row['unit_price'] . "</td>" .
         "</tr>".
      "</table>" .
+     "<div><input type='text' name='quantity' value='1'></div>".
     "<div><input type='submit' value='Add to cart'></div>" .
 "</form>";
       
