@@ -8,6 +8,12 @@
 <?php include_once 'includes/header.php' ?>
 
 <?php
+#define("cart_item", 'CART');
+#define("product_id", 'ID');
+#define("product_name", 'NAME');
+#define("quantity", 'QUANTITY');
+#define("unit_price", 'PRICE');
+
 session_start();
 $db_handle = new DBController();
 if(!empty($_GET["action"])) {
@@ -19,10 +25,22 @@ if(!empty($_GET["action"])) {
 			    $itemArray = array($product["product_id"]=>array('product_name'=>$product["product_name"], 'product_id'=>$product["product_id"], 'quantity'=>1, 'unit_price'=>$product["unit_price"]));
 			
                 if(!empty($_SESSION["cart_item"])) {
-                    if(in_array(strval($product["product_id"]),array_keys($_SESSION["cart_item"]))) {
-                        $_SESSION["cart_item"][strval(product["product_id"])]['quantity'] += 1;
+                    if(in_array($product["product_id"],array_keys($_SESSION["cart_item"]))) {
+                        foreach ($_SESSION["cart_item"] as $key => $val) {
+                            if ($product["product_id"] == $key) {
+                                #if (empty($_SESSION["cart_item"][$key]["quantity"])) {
+                                #    $_SESSION["cart_item"][$key]["quantity"] = 0;
+                                #}
+                                $_SESSION["cart_item"][$key]['quantity'] += 1;
+                            }
+                        }
+                        
+                        echo ("DEBUG: merge");
+                
                     } else {
+                        
                         $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+                        echo ("DEBUG: new");
                     }
                 } else {
                     $_SESSION["cart_item"] = $itemArray;
