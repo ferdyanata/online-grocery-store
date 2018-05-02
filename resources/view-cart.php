@@ -62,6 +62,11 @@ foreach ($_SESSION["cart_item"] as $item) {
     </tr>
 <?php
 }
+
+if (isset($_SESSION["cart_item"])) {
+    echo "<div> <a href='view-cart.php?action=empty'> Clear cart </a> </div>";
+}
+
 ?>
 
 <?php include_once 'includes/footer.php' ?>
