@@ -56,32 +56,11 @@ function displayDetails(productId)
             // Get query from product-details
             // Source: https://stackoverflow.com/questions/1807711/javascript-document-getelementbyid-in-other-frames
             // Display the product name, uni quantity and unit price where product-details id is (get-products.php)
-            var ajaxDisplay = parent.frames["frame-get-products"].document.getElementById("product-details"); 
+            var ajaxDisplay = parent.frames["frame-get-products"].document.getElementById("query-product-details"); 
             ajaxDisplay.innerHTML = xhttp.responseText; 
         } 
     }
 
     xhttp.open("GET", "query-product-details.php?productId=" + productId, true); 
-    xhttp.send();
-}
-
-function displayViewCart(productId)
-{
-    var xhttp; 
-    if (window.XMLHttpRequest) { 
-        xhttp = new XMLHttpRequest(); 
-    } else { 
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
-    } 
-
-    xhttp.onreadystatechange = function() { 
-        if (this.readyState == 4 && this.status == 200) {
-            var parentFrame = parent.frames["frame-view-cart"];            
-            var ajaxViewCartDisplay = parentFrame.document.getElementById("view-cart-div");
-            ajaxViewCartDisplay.innerHTML = xhttp.responseText;
-        } 
-    }
-
-    xhttp.open("POST", "view-cart.php?action=add&code=" + productId, true); 
     xhttp.send();
 }

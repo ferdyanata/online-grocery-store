@@ -13,6 +13,8 @@ $query_string = 'SELECT * FROM products WHERE product_id='.$productId;
 $result = mysqli_query($connection, $query_string);
 $row = mysqli_fetch_assoc($result);
 
+
+
 echo
 "<form action='view-cart.php?action=add&code={$productId}' method='POST' target='frame-view-cart'>" .
     "<table>"  .
@@ -24,8 +26,9 @@ echo
         "<td>$". $row['unit_price'] . "</td>" .
         "</tr>".
     "</table>" .
+    // Default quality in the quantity box
     "<div><input type='text' name='quantity' value='1'></div>".
-    "<div><input onclick='javascript:displayViewCart({$productId})' type='submit' value='Add to cart'></div>"    .
+    "<div><input type='submit' value='Add to cart'></div>"    .
 "</form>";
       
 mysqli_close($connection);

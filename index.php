@@ -29,8 +29,8 @@
             <frame src="resources/get-products.php" name="frame-get-products">
         </frameset>
         <!-- Link to when users add items to cart -->
-        <frameset id="bottomRightFrame" rows="*" name="frame-view-cart">
-            <frame src="resources/view-cart.php">              
+        <frameset id="bottomRightFrame" rows="*">
+            <frame src="resources/view-cart.php" name="frame-view-cart">              
         </frameset>
     </frameset>
 </frameset>
