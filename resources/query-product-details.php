@@ -1,5 +1,5 @@
 <?php include_once 'config.php' ?>
-
+<?php include_once 'includes/header.php' ?>
 <!-- 
     @desc
     Creates a query from the products table for product_name and unit_price
@@ -14,20 +14,22 @@ $result = mysqli_query($connection, $query_string);
 $row = mysqli_fetch_assoc($result);
 
 echo
-"<form action='view-cart.php?action=add&code=".$productId. "'"." method='POST' "."target=index-view-cart>" .
-    "<table>" .
+"<form action='view-cart.php?action=add&code={$productId}' method='POST' target='frame-view-cart'>" .
+    "<table>"  .
         "<tr>" .
-        "<td style='font-weight: bold;'>" . $row['product_name'] . "</td>" .
+        "<td style='font-weight: bold;'>" . $row['product_name']  . "</td>" .
         "<td style='font-weight: bold;'>" . $row['unit_quantity'] . "</td>" . 
         "</tr>".
         "<tr>" .         
         "<td>$". $row['unit_price'] . "</td>" .
         "</tr>".
-     "</table>" .
-     "<div><input type='text' name='quantity' value='1'></div>".
-    "<div><input type='submit' value='Add to cart'></div>" .
+    "</table>" .
+    "<div><input type='text' name='quantity' value='1'></div>".
+    "<div><input onclick='javascript:displayViewCart({$productId})' type='submit' value='Add to cart'></div>"    .
 "</form>";
       
 mysqli_close($connection);
 
 ?>
+
+<?php include_once 'includes/footer.php' ?>
