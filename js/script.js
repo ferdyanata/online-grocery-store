@@ -70,24 +70,24 @@ function validateQuantity(in_stock)
     var quantity = parseInt(document.getElementById("quantity_box").value);
 
     if (Number.isInteger(quantity)) {
-        if (quantity < 0) {
-            alert("Quantity can not be negative!")
+        if (quantity < 0 || quantity == 0) {
+            swal("Uh Oh!", "Quantity should not be less than 1!", "warning");
             return false;
         }
         if (quantity > 20) {
-            alert("Quantity can not be more than 20!");
+            swal("Uh Oh!", "Quantity should not be more than 20!", "warning");
             return false;
         }
         else {
             return true;
         }
     } else {
-        alert("Please input an integer!");
+        swal("Uh Oh!", "Please input an integer!", "warning");
         return false;
     }
 }
 
 function displayWarning()
 {
-    alert("Your cart is empty!");
+    swal("Oops! Your cart is empty", "Please add items to your cart to continue", "warning");
 }
