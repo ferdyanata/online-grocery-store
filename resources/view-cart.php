@@ -26,10 +26,12 @@ if(!empty($_GET["action"])) {
                     if(in_array($product["product_id"],array_keys($_SESSION["cart_item"]))) {
                         foreach ($_SESSION["cart_item"] as $key => $val) {
                             if ($product["product_id"] == $key) {
-                                #if (empty($_SESSION["cart_item"][$key]["quantity"])) {
-                                #    $_SESSION["cart_item"][$key]["quantity"] = 0;
-                                #}
                                 $_SESSION["cart_item"][$key]['quantity'] += $_POST["quantity"];
+                                if ($_SESSION["cart_item"][$key]['quantity'] > $product["in_stock"]) {
+                                    echo "<script type='text/javascript'>alert('Not enough in stock!')</script>";
+                                    $_SESSION["cart_item"][$key]['quantity'] = $product["in_stock"];
+                                }
+                            
                             }
                         }
                         
@@ -63,9 +65,18 @@ if(isset($_SESSION["cart_item"])) {
     }
 }
 
-if (isset($_SESSION["cart_item"])) {
-    echo "<div> <a href='view-cart.php?action=empty'> Clear cart </a> </div>";
+if(!isset($_SESSION["cart_item"])) {
+    echo "<div> Your cart is empty now </div>";
 }
+
+echo "<div> <a href='view-cart.php?action=empty'> Clear cart </a> </div>";
+
+if(!isset($_SESSION["cart_item"])) {
+    echo "<div> <button onclick='javascript:displayWarning()'><a href='#'>Checkout</a></button></div>";
+} else {
+    echo "<div> <button><a href='purchase-form.php' target='_top'>Checkout</a></button></div>";
+}
+
 
 ?>
 

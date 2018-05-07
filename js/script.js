@@ -64,3 +64,30 @@ function displayDetails(productId)
     xhttp.open("GET", "query-product-details.php?productId=" + productId, true); 
     xhttp.send();
 }
+
+function validateQuantity(in_stock)
+{
+    var quantity = parseInt(document.getElementById("quantity_box").value);
+
+    if (Number.isInteger(quantity)) {
+        if (quantity < 0) {
+            alert("Quantity can not be negative!")
+            return false;
+        }
+        if (quantity > 20) {
+            alert("Quantity can not be more than 20!");
+            return false;
+        }
+        else {
+            return true;
+        }
+    } else {
+        alert("Please input an integer!");
+        return false;
+    }
+}
+
+function displayWarning()
+{
+    alert("Your cart is empty!");
+}

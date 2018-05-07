@@ -16,7 +16,7 @@ $row = mysqli_fetch_assoc($result);
 
 
 echo
-"<form action='view-cart.php?action=add&code={$productId}' method='POST' target='frame-view-cart'>" .
+"<form action='view-cart.php?action=add&code={$productId}' method='POST' target='frame-view-cart' onsubmit='return validateQuantity(".$row['in_stock'].")'>" .
     "<table>"  .
         "<tr>" .
         "<td style='font-weight: bold;'>" . $row['product_name']  . "</td>" .
@@ -27,7 +27,7 @@ echo
         "</tr>".
     "</table>" .
     // Default quality in the quantity box
-    "<div><input type='text' name='quantity' value='1'></div>".
+    "<div><input type='text' name='quantity' id='quantity_box' value='1'></div>".
     "<div><input type='submit' value='Add to cart'></div>"    .
 "</form>";
       
