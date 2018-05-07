@@ -33,12 +33,9 @@ if(!empty($_GET["action"])) {
                             }
                         }
                         
-                        echo ("DEBUG: merge");
-                
                     } else {
                         
                         $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
-                        echo ("DEBUG: new");
                     }
                 } else {
                     $_SESSION["cart_item"] = $itemArray;
@@ -51,7 +48,8 @@ if(!empty($_GET["action"])) {
     }
 }
 
-foreach ($_SESSION["cart_item"] as $item) {
+if(isset($_SESSION["cart_item"])) {
+    foreach ($_SESSION["cart_item"] as $item) {
 ?>
     <div id="view-cart-div">
         <tr>
@@ -62,6 +60,7 @@ foreach ($_SESSION["cart_item"] as $item) {
         </tr>
     </div>
 <?php
+    }
 }
 
 if (isset($_SESSION["cart_item"])) {
