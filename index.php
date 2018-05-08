@@ -20,7 +20,7 @@
     Reference: To help create the frames, we used this guide from 
      https://html.com/frames/#Creating_Horizontal_Rows 
 -->
-<frameset id="leftFrame" cols="*, *" frameborder="0">
+<frameset id="leftFrame" cols="25%, 50%" frameborder="0">
     <!-- Link to products menu -->
     <frame src="resources/view-products.php" name="frame-view-products">
     <frameset rows="*, *">

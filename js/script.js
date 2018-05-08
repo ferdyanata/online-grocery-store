@@ -40,7 +40,7 @@ function minusQuantity()
     var quantity = parseInt(box.value);
 
     if (quantity <= 1) {
-        alert("Reached minimum");
+        swal("Sorry!","You've reached the minimum amount to add!", "warning");
     } else {
         box.value = quantity - 1;
     }
@@ -53,7 +53,7 @@ function plusQuantity()
     var quantity = parseInt(box.value);
 
     if (quantity >= 20) {
-        alert("Reached maximum");
+        swal("Sorry!","You've reached the maximum amount to add!", "warning");
     } else {
         box.value = quantity + 1;
     }
