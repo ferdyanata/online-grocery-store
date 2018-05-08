@@ -72,12 +72,10 @@ if(!isset($_SESSION["cart_item"])) {
 echo "<div> <a href='view-cart.php?action=empty'> Clear cart </a> </div>";
 
 if(!isset($_SESSION["cart_item"])) {
-    echo "<div> <button onclick='javascript:displayWarning()'><a href='#'>Checkout</a></button></div>";
+    echo "<div> <button onclick='javascript:displayWarning()'><a href='#'>Checkout</a></button> </div>";
 } else {
-    echo "<div> <button><a href='purchase-form.php' target='_top'>Checkout</a></button></div>";
+    echo "<div> <button><a href='purchase-form.php' target='_top'>Checkout</a></button> </div>";
 }
-
-
 ?>
 
 <?php include_once 'includes/footer.php' ?>
