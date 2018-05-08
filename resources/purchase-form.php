@@ -1,43 +1,67 @@
 <?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 
+<form class="container ui form" id="checkoutForm" action="<?php $_SERVER['PHP_SELF']?>" method="POST">
+  
+    <h4 class="ui dividing header">Shipping Information</h4>
+    <div class="field">
+        <label>Name*</label>
+        <div class="three fields">
+            <div class="field">
+                <input type="text" name="shipping[first-name]" placeholder="First Name" size="20" maxlength="20">
+            </div>
+            <div class="field">
+                <input type="text" name="shipping[last-name]" placeholder="Last Name">
+            </div>
+            <div class="field">
+                <input type="text" name="shipping[email]" placeholder="Email address">
+            </div>
+        </div>
+    </div>
 
-<form id="checkoutForm" action="<?php $_SERVER['PHP_SELF']?>" method="POST">
-<table>
-    <h4>Shipping Information</h4>
-    <tr>
-        <td><label for="first-name">First Name</label></td>
-        <td><input type="text" id="first-name" placeholder="First Name" size="20" maxlength="20"></td>
-    </tr>
-    <tr>
-        <td><label for="last-name">Last Name</label></td>
-        <td><input type="text" id="last-name" placeholder="Last Name"></td>
-    </tr>
-    <tr>
-        <td><label for="address">Address</label></td>
-        <td><input type="text" id="address" placeholder="Address"></td>
-    </tr>
-    <tr>
-        <td><label for="suburb">Suburb</label></td>
-        <td><input type="text" id="suburb" placeholder="Suburb"></td>
-    </tr>
-    <tr>
-        <td><label for="state">State</label></td>
-        <td><input type="text" id="state" placeholder="State"></td>
-    </tr>
-    <tr>
-        <td><label for="country">Country</label></td>
-        <td><input type="text" id="country" placeholder="Country"></td>
-    </tr>
-    <tr>
-        <td><label for="email">Email</label></td>
-        <td><input type="email" id="email" placeholder="Email"></td>
-    </tr>
-    <tr>
-        <td><label for="purchase"></label></td>
-        <td><input type="submit" value="Purchase"></td>
-    </tr>
-</table>
+    <div class="field">
+        <label>Billing Address*</label>
+        <div class="two fields">
+            <div class="field">
+                <input type="text" name="shipping[address]" placeholder="Street Address">
+            </div>
+            <div class="field">
+                <input type="text" name="shipping[suburb]" placeholder="Suburb">
+            </div>
+        </div>
+        <div class="three fields">
+            <div class="field">
+                <label>State*</label>
+                <select class="ui fluid dropdown">
+                    <option value="">State</option>
+                    <option value="NSW">NSW</option>
+                    <option value="Qld">Qld</option>
+                    <option value="SA">SA</option>
+                    <option value="Tas">Tas</option>
+                    <option value="Vic">Vic</option>
+                    <option value="WA">WA</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="country">Country*</label>
+                <div>
+                    <input type="text" name="shipping[country]" id="country" placeholder="Country">
+                </div>
+            </div>
+            <div class="field">
+                <label for="postcode">Postcode*</label>
+                <input type="text" name="shipping[postcode]" id="postcode" placeholder="Postcode">
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <h4 class="ui dividing header">Receipt</h4>        
+        <label for="sendReceiptInput">Send Receipt To:</label>
+        <input type="text" id="sendReceiptInput">
+    </div>
+
+    <button class="ui blue button" type="submit">Purchase</button>
 </form>
 
 <?php
