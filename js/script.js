@@ -32,6 +32,33 @@ $(document).ready(function() {
     );
 });
 
+
+function minusQuantity()
+{
+    var box = document.getElementById("quantity_box");
+
+    var quantity = parseInt(box.value);
+
+    if (quantity <= 1) {
+        alert("Reached minimum");
+    } else {
+        box.value = quantity - 1;
+    }
+}
+
+function plusQuantity()
+{
+    var box = document.getElementById("quantity_box");
+
+    var quantity = parseInt(box.value);
+
+    if (quantity >= 20) {
+        alert("Reached maximum");
+    } else {
+        box.value = quantity + 1;
+    }
+}
+
 /**
  * @desc
  * Displays details of product when user clicks a button including
@@ -91,3 +118,4 @@ function displayWarning()
 {
     swal("Oops! Your cart is empty", "Please add items to your cart to continue", "warning");
 }
+

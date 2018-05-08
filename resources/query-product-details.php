@@ -17,20 +17,37 @@ $row = mysqli_fetch_assoc($result);
 
 echo
 "<form action='view-cart.php?action=add&code={$productId}' method='POST' target='frame-view-cart' onsubmit='return validateQuantity(".$row['in_stock'].")'>" .
-    "<table>"  .
-        "<tr>" .
-        "<td style='font-weight: bold;'>" . $row['product_name']  . "</td>" .
-        "<td style='font-weight: bold;'>" . $row['unit_quantity'] . "</td>" . 
-        "</tr>".
-        "<tr>" .         
-        "<td>$". $row['unit_price'] . "</td>" .
-        "</tr>".
-    "</table>" .
+    // "<table>"  .
+    //     "<tr>" .
+    //     "<td style='font-weight: bold;'>" . $row['product_name']  . "</td>" .
+    //     "<td style='font-weight: bold;'>" . $row['unit_quantity'] . "</td>" . 
+    //     "</tr>".
+    //     "<tr>" .         
+    //     "<td>$". $row['unit_price'] . "</td>" .
+    //     "</tr>".
+    // "</table>" .
     // Default quality in the quantity box
-    "<div><input type='text' name='quantity' id='quantity_box' value='1'></div>".
-    "<div><input type='submit' value='Add to cart'></div>"    .
-"</form>";
-      
+    //"<div><input type='text' name='quantity' id='quantity_box' value='1'></div>".
+    "<div><input type='submit' value='Add to cart'></div>" .
+
+    "<div class='shopping-cart'>".
+        "<div class='item'>" .
+            "<div class='description'>" . 
+                "<span>" . $row['product_name'] . "</span>" .
+                "<span>" . $row['unit_quantity'] . "</span>" .
+            "</div>" . 
+            "<div class='quantity'>" .
+                "<button onclick='minusQuantity()' type='button' name='button'>" .
+                    "<img src='minus.svg' alt='-' />" . 
+                "</button>" .
+                "<input type='text' name='quantity' id='quantity_box' value='1'>" .
+                "<button onclick='plusQuantity()'  type='button' name='button'>" .
+                    "<img src='plus.svg' alt='+' />" .
+                "</button>" .
+            "</div>" .
+        "</div>" .
+    "</div>".
+    "</form>";       
 mysqli_close($connection);
 
 ?>
