@@ -24,6 +24,7 @@ if(!empty($_GET["action"])) {
 			
                 if(!empty($_SESSION["cart_item"])) {
                     if(in_array($product["product_id"],array_keys($_SESSION["cart_item"]))) {
+                        echo "merge!";
                         foreach ($_SESSION["cart_item"] as $key => $val) {
                             if ($product["product_id"] == $key) {
                                 $_SESSION["cart_item"][$key]['quantity'] += $_POST["quantity"];
@@ -31,13 +32,15 @@ if(!empty($_GET["action"])) {
                                     echo "<script type='text/javascript'>alert('Not enough in stock!')</script>";
                                     $_SESSION["cart_item"][$key]['quantity'] = $product["in_stock"];
                                 }
-                            
                             }
                         }
                         
                     } else {
-                        
-                        $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+                        $_SESSION["cart_item"][$product["product_id"]] = array(
+                                                'product_name'  =>  $product["product_name"],
+                                                'product_id'    =>  $product["product_id"], 
+                                                'quantity'      =>  $_POST["quantity"], 
+                                                'unit_price'    =>  $product["unit_price"]);
                     }
                 } else {
                     $_SESSION["cart_item"] = $itemArray;
