@@ -5,7 +5,7 @@
   
     <h4 class="ui dividing header">Shipping Information</h4>
     <div class="field">
-        <label>Name*</label>
+        <label>Name<span class="asterisks">*</span></label>
         <div class="three fields">
             <div class="field">
                 <input type="text" name="shipping[first-name]" placeholder="First Name" size="20" maxlength="20">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="field">
-        <label>Billing Address*</label>
+        <label>Billing Address<span class="asterisks">*</span></label>
         <div class="two fields">
             <div class="field">
                 <input type="text" name="shipping[address]" placeholder="Street Address">
@@ -31,7 +31,7 @@
         </div>
         <div class="three fields">
             <div class="field">
-                <label>State*</label>
+                <label>State<span class="asterisks">*</span></label>
                 <select class="ui fluid dropdown">
                     <option value="">State</option>
                     <option value="NSW">NSW</option>
@@ -43,13 +43,13 @@
                 </select>
             </div>
             <div class="field">
-                <label for="country">Country*</label>
+                <label for="country">Country<span class="asterisks">*</span></label>
                 <div>
                     <input type="text" name="shipping[country]" id="country" placeholder="Country">
                 </div>
             </div>
             <div class="field">
-                <label for="postcode">Postcode*</label>
+                <label for="postcode">Postcode<span class="asterisks">*</span></label>
                 <input type="text" name="shipping[postcode]" id="postcode" placeholder="Postcode">
             </div>
         </div>

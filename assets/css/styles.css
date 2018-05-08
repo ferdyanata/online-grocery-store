@@ -196,3 +196,11 @@ input:focus {
 #addToCartButton {
     margin-top: 12px;
 }
+
+/*
+ * Asterisks styling 
+ */
+
+ .asterisks {
+     color: red;
+ }
