@@ -152,6 +152,7 @@ button[class*=btn] {
 .plus-btn img {
   margin-top: 2px;
 }
+
 button:focus,
 input:focus {
   outline:0;
