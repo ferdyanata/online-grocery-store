@@ -15,7 +15,7 @@
     data to. 
     Source: https://css-tricks.com/snippets/html/post-data-to-an-iframe/
     -->
-<form action="get-products.php" method="GET" target="index-get-products">
+<form action="get-products.php" method="GET" target="frame-get-products">
 <div id="container">
         <div id="menu">
             <ul id="menuBar">

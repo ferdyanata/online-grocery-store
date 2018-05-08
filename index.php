@@ -20,17 +20,17 @@
     Reference: To help create the frames, we used this guide from 
      https://html.com/frames/#Creating_Horizontal_Rows 
 -->
-<frameset id="leftFrame" cols="*, *" frameborder="0">
+<frameset id="leftFrame" cols="25%, 50%" frameborder="0">
     <!-- Link to products menu -->
-    <frame src="resources/view-products.php" frameborder="0" name="index-view-products">
+    <frame src="resources/view-products.php" name="frame-view-products">
     <frameset rows="*, *">
         <!-- Link to product details when clicked -->
         <frameset id="topRightFrame" rows="*">
-            <frame src="resources/get-products.php" frameborder="0" name="index-get-products">
+            <frame src="resources/get-products.php" name="frame-get-products">
         </frameset>
         <!-- Link to when users add items to cart -->
-        <frameset id="bottomRightFrame" rows="*" frameborder="0" name="index-view-cart">
-            <frame src="resources/view-cart.php">              
+        <frameset id="bottomRightFrame" rows="*">
+            <frame src="resources/view-cart.php" name="frame-view-cart">              
         </frameset>
     </frameset>
 </frameset>

@@ -7,9 +7,10 @@
 
 <!--  
     @desc 
-    Display the product_name and unit_price values inside the div tag 
+    Display the product_name, unit_quantity and unit_price values inside the div tag 
 --> 
 <p>get-products page</p>
-<div id="product-details"></div>
+
+<div id="query-product-details"></div>
 
 <?php include_once 'includes/footer.php' ?>
