@@ -1,7 +1,7 @@
 /*
  * Hovering over the menu of products
 */
-.mainLinks {
+/*.mainLinks {
     width: 150px;
     padding: 0;
     margin: 0;
@@ -47,7 +47,7 @@ ul.sub li {
     background: transparent;
     color: black;
     /* Adjust where the drop-down submenu will pop up */
-    left: 70px;
+    /*left: 70px;
     top: -1.5px;
     list-style-type: none;
 }
@@ -56,7 +56,7 @@ ul.sub li {
     display: block;
     float: none;
     width: 100px;
-}
+}*/
 
 /* 
  * Get products styling
@@ -204,3 +204,96 @@ input:focus {
  .asterisks {
      color: red;
  }
+
+
+
+ /* For menu*/
+
+#menu ul li:hover>ul {
+  left: 150px;
+  -webkit-transition: left 200ms ease-in;
+  -moz-transition: left 200ms ease-in;
+  -ms-transition: left 200ms ease-in;
+  transition: left 200ms ease-in;
+}
+
+#menu ul li>ul {
+  position: absolute;
+  background-color: #333;
+  top: 0;
+  left: -150px;
+  min-width: 150px;
+  z-index: -1;
+  height: 100%;
+  -webkit-transition: left 200ms ease-in;
+  -moz-transition: left 200ms ease-in;
+  -ms-transition: left 200ms ease-in;
+  transition: left 200ms ease-in;
+}
+
+#menu ul li>ul li a:hover {
+  background-color: #2e2e2e;
+}
+
+
+#menu ul li ul li>ul {
+  left: 150px;
+  -webkit-transition: left 200ms ease-in;
+  -moz-transition: left 200ms ease-in;
+  -ms-transition: left 200ms ease-in;
+  transition: left 200ms ease-in;
+}
+
+#menu ul li ul li>ul {
+  position: absolute;
+  background-color: #333;
+  top: 0;
+  left: -150px;
+  min-width: 150px;
+  z-index: -1;
+  height: 100%;
+  -webkit-transition: left 200ms ease-in;
+  -moz-transition: left 200ms ease-in;
+  -ms-transition: left 200ms ease-in;
+  transition: left 200ms ease-in;
+}
+
+p,
+ul,
+li,
+div,
+nav {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Calibri;
+}
+
+#menu {
+  overflow: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.parent-menu {
+  background-color: #0c8fff;
+  min-width: 100px;
+  float: left;
+}
+
+#menu ul {
+  list-style-type: none;
+}
+
+#menu ul li a {
+  padding: 10px 15px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+#menu ul li a:hover {
+  background-color: #007ee9;
+}

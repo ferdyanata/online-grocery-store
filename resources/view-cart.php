@@ -81,4 +81,37 @@ if(!isset($_SESSION["cart_item"])) {
 }
 ?>
 
+<div class="ui inline dropdown">
+  <input type="hidden" name="gender">
+  <div class="text">Shiba Inu</div>
+  <i class="dropdown icon"></i>
+  <div class="menu">
+    <div class="item">
+      <i class="dropdown icon"></i>
+      <span class="text">Dogs</span>
+      <div class="menu">
+        <div class="item">Shiba Inu</div>
+        <div class="item">
+          <i class="dropdown icon"></i>
+          <span class="text">Poodle</span>
+          <div class="menu">
+            <div class="item">Toy</div>
+            <div class="item">Standard</div>
+          </div>
+        </div>
+        <div class="item">Labrador</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="dropdown icon"></i>
+      <span class="text">Cats</span>
+      <div class="menu">
+        <div class="item">Aegean</div>
+        <div class="item">Balinese</div>
+        <div class="item">Persian</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <?php include_once 'includes/footer.php' ?>
