@@ -71,12 +71,12 @@ if(!isset($_SESSION["cart_item"])) {
     echo "<div> Your cart is empty now </div>";
 }
 
-echo "<button class='ui red button' id='clear-btn'><a href='view-cart.php?action=empty'> Clear cart </a> </button>";
+echo "<a href='view-cart.php?action=empty'> <button class='ui red button' id='clear-btn'><i class='ban icon'></i> Clear cart </button></a>";
 
 if(!isset($_SESSION["cart_item"])) {
-    echo "<button id='checkout-btn' class='positive ui button' onclick='javascript:displayWarning()'><a href='#'>Checkout</a></button>";
+    echo "<a href='#'><button id='checkout-btn' class='positive ui button' onclick='javascript:displayWarning()'><i class='cart arrow down icon'></i>Checkout</button></a>";
 } else {
-    echo "<button id='checkout-btn' class='positive ui button'><a href='purchase-form.php' target='_top'>Checkout</a></button>";
+    echo "<a href='purchase-form.php' target='_top'><button id='checkout-btn' class='positive ui button'><i class='cart arrow down icon'></i>Checkout</button></a>";
 }
 ?>
 

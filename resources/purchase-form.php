@@ -61,7 +61,7 @@
         <input type="text" id="sendReceiptInput">
     </div>
 
-    <button class="ui blue button" type="submit">Purchase</button>
+    <button class="ui blue button" type="submit"><i class="credit card outline icon"></i>Purchase</button>
 </form>
 
 <?php
