@@ -24,7 +24,6 @@ if(!empty($_GET["action"])) {
 			
                 if(!empty($_SESSION["cart_item"])) {
                     if(in_array($product["product_id"],array_keys($_SESSION["cart_item"]))) {
-                        echo "merge!";
                         foreach ($_SESSION["cart_item"] as $key => $val) {
                             if ($product["product_id"] == $key) {
                                 $_SESSION["cart_item"][$key]['quantity'] += $_POST["quantity"];
@@ -72,46 +71,13 @@ if(!isset($_SESSION["cart_item"])) {
     echo "<div> Your cart is empty now </div>";
 }
 
-echo "<div> <a href='view-cart.php?action=empty'> Clear cart </a> </div>";
+echo "<button class='ui red button' id='clear-btn'><a href='view-cart.php?action=empty'> Clear cart </a> </button>";
 
 if(!isset($_SESSION["cart_item"])) {
-    echo "<div> <button onclick='javascript:displayWarning()'><a href='#'>Checkout</a></button> </div>";
+    echo "<button id='checkout-btn' class='positive ui button' onclick='javascript:displayWarning()'><a href='#'>Checkout</a></button>";
 } else {
-    echo "<div> <button><a href='purchase-form.php' target='_top'>Checkout</a></button> </div>";
+    echo "<button id='checkout-btn' class='positive ui button'><a href='purchase-form.php' target='_top'>Checkout</a></button>";
 }
 ?>
-
-<div class="ui inline dropdown">
-  <input type="hidden" name="gender">
-  <div class="text">Shiba Inu</div>
-  <i class="dropdown icon"></i>
-  <div class="menu">
-    <div class="item">
-      <i class="dropdown icon"></i>
-      <span class="text">Dogs</span>
-      <div class="menu">
-        <div class="item">Shiba Inu</div>
-        <div class="item">
-          <i class="dropdown icon"></i>
-          <span class="text">Poodle</span>
-          <div class="menu">
-            <div class="item">Toy</div>
-            <div class="item">Standard</div>
-          </div>
-        </div>
-        <div class="item">Labrador</div>
-      </div>
-    </div>
-    <div class="item">
-      <i class="dropdown icon"></i>
-      <span class="text">Cats</span>
-      <div class="menu">
-        <div class="item">Aegean</div>
-        <div class="item">Balinese</div>
-        <div class="item">Persian</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <?php include_once 'includes/footer.php' ?>
