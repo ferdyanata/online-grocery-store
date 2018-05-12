@@ -67,41 +67,72 @@
 
 <?php
     // @desc 
-    // Test code for email
+    // Emails the user the products that they've purchased
 
-    // $to = "ferdy.anata@gmail.com";
-    // $subject = "HTML email";
+    $to = $_GET["email"];
+    $subject = "Your shopping order has been placed!";
+    $firstName = $_GET["first-name"];
+    $lastName = $_GET["last-name"];
+    $address = $_GET["address"];
+    $postcode = $_GET["postcode"];
+    $state = $_GET["state"];
+    $suburb = $_GET["suburb"];
+    $country = $_GET["country"];
+
     
-    // $message = "
-    // <html>
-    // <head>
-    // <title>HTML email</title>
-    // </head>
-    // <body>
-    // <p>This email contains HTML Tags!</p>
-    // <table>
-    // <tr>
-    // <th>Firstname</th>
-    // <th>Lastname</th>
-    // </tr>
-    // <tr>
-    // <td>John</td>
-    // <td>Doe</td>
-    // </tr>
-    // </table>
-    // </body>
-    // </html>
-    // ";
+    $message = "
+    <html>
+
+    <head>
+        <title>HTML email</title>
+    </head>
     
-    // // Always set content-type when sending HTML email
-    // $headers = "MIME-Version: 1.0" . "\r\n";
-    // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    <body>
+        <p>Hey {$firstName},</p>
+        <p>Good news, your order has been placed with us.</p>
+        <p>You can check your order below</p>
+        <p>Have a great day,</p>
+        <p>The Online Grocery Store</p>
+        <table>
+            <thead>
+                Shipping Address
+            </thead>
+            <tr>
+                <td>{$firstName}</td>
+                <td>{$lastName}</td>
+            </tr>
+            <tr>
+                <td>{$address}</td>
+                <td>{$suburb}, {$postcode}</td>
+                <td>{$state}, {$country}</td>
+            </tr>
+        </table>
     
-    // // More headers
-    // $headers .= 'From: <ferdy.anata@gmail.com>' . "\r\n";
-    // // $headers .= 'Cc: myboss@example.com' . "\r\n";
+        <table>
+            <tr>
+                <thead>
+                    Item details
+                </thead>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
     
-    // mail($to,$subject,$message,$headers);
+    </html>
+    ";
+    
+    // Always set content-type when sending HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    
+    // More headers
+    $headers .= 'From: <{$to}>' . "\r\n";
+    // $headers .= 'Cc: myboss@example.com' . "\r\n";
+    
+    mail($to,$subject,$message,$headers);
 ?>
 
 <?php include_once 'includes/footer.php' ?>
