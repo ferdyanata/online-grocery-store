@@ -22,7 +22,7 @@
 -->
 <frameset id="leftFrame" cols="25%, 50%" frameborder="0">
     <!-- Link to products menu -->
-    <frame src="resources/view-products-test.php" name="frame-view-products">
+    <frame src="resources/view-products.php" name="frame-view-products">
     <frameset rows="*, *">
         <!-- Link to product details when clicked -->
         <frameset id="topRightFrame" rows="*">

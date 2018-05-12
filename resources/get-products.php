@@ -9,7 +9,7 @@
     @desc 
     Display the product_name, unit_quantity and unit_price values inside the div tag 
 --> 
-<p>get-products page</p>
+<h2 class="ui dividing header">Selected products</h2>
 
 <div id="query-product-details"></div>
 

@@ -57,7 +57,7 @@ if(!empty($_GET["action"])) {
             break;	
     }
 }
-
+echo "<h2 class='ui dividing header'>Your cart</h2>";
 // Loops through the array in cart and display it
 if(isset($_SESSION["cart_item"])) {
     echo "<div id='head' class='item'>
@@ -72,33 +72,40 @@ if(isset($_SESSION["cart_item"])) {
             </div>
           </div>";
     foreach ($_SESSION["cart_item"] as $item) {
-        echo "<div class='item'>
-                <div class='description'> 
-                    <span>" . $item['product_name'] ."</span>
-                    <span>" . $item['unit_quantity'] ."</span>
-                    <span>$" . $item['unit_price'] . "</span>
-                </div> 
-                <div class='quantity'>"
-                    .$item['quantity'].   
-               "</div>
-                <div class='quantity'>$".
-                    $item['unit_price']*$item['quantity']."
-                </div>
-              </div>";
+    echo "<div class='item'>
+            <div class='description'> 
+                <span>" . $item['product_name'] ."</span>
+                <span>" . $item['unit_quantity'] ."</span>
+                <span>$". $item['unit_price'] ."</span>
+            </div> 
+            <div class='quantity'>"
+                .$item['quantity'].   
+            "</div>
+            <div class='quantity'>$".
+                $item['unit_price']*$item['quantity']."
+            </div>
+            </div>";
     }
 }
 
 if(!isset($_SESSION["cart_item"])) {
-    echo "<div> Your cart is empty now </div>";
+    echo "<div> Your cart is currently empty. </div>";
 }
-
-echo "<a href='view-cart.php?action=empty'> <button class='ui red button' id='clear-btn'><i class='ban icon'></i> Clear cart </button></a>";
 
 if(!isset($_SESSION["cart_item"])) {
-    echo "<a href='#'><button id='checkout-btn' class='positive ui button' onclick='javascript:displayWarning()'><i class='cart arrow down icon'></i>Checkout</button></a>";
+    echo "<div right ui rail>
+            <div class='ui sticky'>
+                <a href='#'><button id='checkout-btn' class='positive ui button' onclick='javascript:displayWarning()'><i class='cart arrow down icon'></i>Checkout</button></a>
+            </div>
+          </div>";
 } else {
-    echo "<a href='purchase-form.php' target='_top'><button id='checkout-btn' class='positive ui button'><i class='cart arrow down icon'></i>Checkout</button></a>";
-}
+    echo "<div right ui rail>
+            <div class='ui sticky'>
+                <a href='purchase-form.php' target='_top'><button id='checkout-btn' class='positive ui button'><i class='cart arrow down icon'></i>Checkout</button></a>
+                <a href='view-cart.php?action=empty'> <button class='ui red button' id='clear-btn'><i class='ban icon'></i> Clear cart </button></a>
+            </div>
+          </div>";
+    }
 ?>
 
 <?php include_once 'includes/footer.php' ?>
