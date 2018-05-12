@@ -9,11 +9,16 @@
 
 <?php
 session_start();
+// DBController is a another connection to the database, but it is formed 
+// as classes to make product queries more readable.
 $db_handle = new DBController();
+// Checks for action attribute in query-product-details is not empty
 if(!empty($_GET["action"])) {
     switch($_GET["action"]) {
+        // action attribute's value =add&code={$productId}
 	    case "add":
 		    if(!empty($_POST["quantity"])) {
+                // runQuery is a method in DBController()
 			    $product = $db_handle->runQuery("SELECT * FROM products WHERE product_id=" . $_GET["code"]);
 			    $itemArray = array(
                     $product["product_id"]  =>  array(
@@ -22,19 +27,18 @@ if(!empty($_GET["action"])) {
                                                 'unit_quantity' =>  $product["unit_quantity"],
                                                 'quantity'      =>  $_POST["quantity"], 
                                                 'unit_price'    =>  $product["unit_price"]));
-			
+                
                 if(!empty($_SESSION["cart_item"])) {
                     if(in_array($product["product_id"],array_keys($_SESSION["cart_item"]))) {
                         foreach ($_SESSION["cart_item"] as $key => $val) {
                             if ($product["product_id"] == $key) {
                                 $_SESSION["cart_item"][$key]['quantity'] += $_POST["quantity"];
                                 if ($_SESSION["cart_item"][$key]['quantity'] > $product["in_stock"]) {
-                                    echo "<script type='text/javascript'>alert('Not enough in stock!')</script>";
+                                    echo "<script type='text/javascript'>swal('Oops!','Not enough in stock!', 'warning')</script>";
                                     $_SESSION["cart_item"][$key]['quantity'] = $product["in_stock"];
                                 }
                             }
                         }
-                        
                     } else {
                         $_SESSION["cart_item"][$product["product_id"]] = array(
                                                 'product_name'  =>  $product["product_name"],
@@ -54,6 +58,7 @@ if(!empty($_GET["action"])) {
     }
 }
 
+// Loops through the array in cart and display it
 if(isset($_SESSION["cart_item"])) {
     echo "<div id='head' class='item'>
             <div class='description'> 
