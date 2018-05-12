@@ -1,4 +1,11 @@
 /*
+ * hr styling
+ */
+hr {
+  color: rgb(230, 230, 230);
+}
+
+/*
  * Hovering over the menu of products
 */
 .mainLinks {
