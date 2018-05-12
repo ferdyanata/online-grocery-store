@@ -1,20 +1,21 @@
 <?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 
-<form class="container ui form" id="checkoutForm" action="<?php $_SERVER['PHP_SELF']?>" method="POST">
+<form class="container ui form" id="checkoutForm" action="<?php $_SERVER['PHP_SELF']?>" method="POST"
+        onsubmit="return validate_form()">
   
     <h4 class="ui dividing header">Shipping Information</h4>
     <div class="field">
         <label>Name<span class="asterisks">*</span></label>
         <div class="three fields">
             <div class="field">
-                <input type="text" name="shipping[first-name]" placeholder="First Name" size="20" maxlength="20">
+                <input type="text" id="firstName" name="first-name" placeholder="First Name" size="20" maxlength="20">
             </div>
             <div class="field">
-                <input type="text" name="shipping[last-name]" placeholder="Last Name">
+                <input type="text" id="lastName" name="last-name" placeholder="Last Name">
             </div>
             <div class="field">
-                <input type="text" name="shipping[email]" placeholder="Email address">
+                <input type="text" id="email" name="email" placeholder="Email address">
             </div>
         </div>
     </div>
@@ -23,16 +24,16 @@
         <label>Billing Address<span class="asterisks">*</span></label>
         <div class="two fields">
             <div class="field">
-                <input type="text" name="shipping[address]" placeholder="Street Address">
+                <input type="text" id="address" name="address" placeholder="Street Address">
             </div>
             <div class="field">
-                <input type="text" name="shipping[suburb]" placeholder="Suburb">
+                <input type="text" id="suburb" name="suburb" placeholder="Suburb">
             </div>
         </div>
         <div class="three fields">
             <div class="field">
                 <label>State<span class="asterisks">*</span></label>
-                <select class="ui fluid dropdown">
+                <select id="state" name="state" class="ui fluid dropdown">
                     <option value="">State</option>
                     <option value="NSW">NSW</option>
                     <option value="Qld">Qld</option>
@@ -45,12 +46,12 @@
             <div class="field">
                 <label for="country">Country<span class="asterisks">*</span></label>
                 <div>
-                    <input type="text" name="shipping[country]" id="country" placeholder="Country">
+                    <input type="text" name="country" id="country" placeholder="Country">
                 </div>
             </div>
             <div class="field">
                 <label for="postcode">Postcode<span class="asterisks">*</span></label>
-                <input type="text" name="shipping[postcode]" id="postcode" placeholder="Postcode">
+                <input type="text" name="postcode" id="postcode" placeholder="Postcode">
             </div>
         </div>
     </div>
