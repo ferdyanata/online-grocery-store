@@ -36,9 +36,6 @@ if(!empty($_GET["action"])) {
                         foreach ($_SESSION["cart_item"] as $key => $val) {
                             if ($product["product_id"] == $key) {
                                 $_SESSION["cart_item"][$key]['quantity'] += $_POST["quantity"];
-                                if ($_SESSION["cart_item"][$key]['quantity'] > 20) {
-                                    echo "<script type='text/javascript'>swal('Oops!','You can only buy no more than 20', 'warning')</script>";
-                                    $_SESSION["cart_item"][$key]['quantity'] = 20;
                                 // Display message if the user tries to order more than what is available in stock
                                 if ($_SESSION["cart_item"][$key]['quantity'] > $product["in_stock"]) {
                                     echo "<script type='text/javascript'>swal('Oops!','Not enough in stock!', 'warning')</script>";
@@ -46,8 +43,7 @@ if(!empty($_GET["action"])) {
                                 }
                             }
                         }
-                    } 
-                    else {
+                    } else {
                         // If cart is empty then add and display on bottom right frame
                         $_SESSION["cart_item"][$product["product_id"]] = array(
                                                 'product_name'  =>  $product["product_name"],
