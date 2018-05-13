@@ -4,13 +4,15 @@
 <div class="ui vertically divided grid">
     <div class="two column row">
         <div class="container column">
-            <form class="ui form" id="checkoutForm" action="mail-form.php" method="POST">
+            <form class="ui form" name="checkoutForm" id="checkoutForm" action="mail-form.php" method="POST"
+                onsubmit="return validateForm()">
                 <h2 class="ui dividing header">Shipping Information</h2>
                 <div class="field">
                     <label>Name<span class="asterisks">*</span></label>
                     <div class="three fields">
                         <div class="field">
                             <input type="text" id="firstName" name="first-name" placeholder="First Name" size="20" maxlength="20">
+                            <div id="pointingLabel"></div>
                         </div>
                         <div class="field">
                             <input type="text" id="lastName" name="last-name" placeholder="Last Name">
@@ -65,6 +67,7 @@
             <h2 class="ui dividing header">Your items</h2>
             <?php
                 session_start();
+                $totalAmount = 0;
                 if(isset($_SESSION["cart_item"])) {
                     echo "<div id='head' class='item'>
                             <div class='description'> 
@@ -78,6 +81,7 @@
                             </div>
                           </div>";
                     foreach ($_SESSION["cart_item"] as $item) {
+                    $totalAmount += $item['unit_price']*$item['quantity'];
                     echo "<div class='item'>
                             <div class='description'> 
                                 <span>" . $item['product_name'] ."</span>
@@ -92,8 +96,13 @@
                             </div>
                          </div>";
                     }
+                    echo "<div class='quantity'>
+                                Total Amount
+                                $" . $totalAmount .
+                            "</div>";
                 }   
             ?>
+            <tr>
         </div>
     </div>
 </div>

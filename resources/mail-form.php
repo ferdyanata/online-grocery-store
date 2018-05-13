@@ -39,6 +39,7 @@
             </head>
 
             <body>
+            <div class='container'>
                 <p>Hey {$firstName},</p>
                 <p>Good news, your order has been placed with us. You can check your order below.</p>
                 <p>Thanks for shopping with us,</p>
@@ -63,6 +64,8 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class='container'>
                 <hr style='color: rgb(209, 210, 211)'>
                 <table>
                     <tbody>
@@ -86,31 +89,31 @@
         if(isset($_SESSION["cart_item"])){
             foreach ($_SESSION["cart_item"] as $item) {
                 $message .= "<tr>
-                                <td>{$item['product_name']}</td>
-                                <td>{$item['quantity']}</td>
-                                <td>{$item['unit_quantity']}</td>
-                                <td style='font-weight: bold;'>
+                                <td style='padding: 10px;'>{$item['product_name']}</td>
+                                <td style='padding: 10px;'>{$item['quantity']}</td>
+                                <td style='padding: 10px;'>{$item['unit_quantity']}</td>
+                                <td style='font-weight: bold; padding: 10px;'>
                                 $" . $item['unit_price']*$item['quantity'] .
                                 "</td>
-                            </tr>";
-                
+                            </tr>";        
                 $totalAmount += $item['unit_price']*$item['quantity'];
             }
         }
         
         $message .= "
                     <tr>
-                        <td style='margin-right: 100%;'>
+                        <td style='margin-right: 100%; padding: 10px;'>
                             Total Amount
                         </td>
                         <td style='font-weight: bold;'>
-                            ${$totalAmount}
+                            $" . $totalAmount . "
                         </td>
                     </tr>
                     </tbody>
                     </table>
-                </body>
-                </html>";
+                </div>
+            </body>
+            </html>";
 
         // Always set content-type when sending HTML email 
         $headers = "MIME-Version: 1.0" . "\r\n"; 
