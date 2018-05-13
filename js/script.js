@@ -1,38 +1,12 @@
 /* 
-    Created on : 23/04/2018, 12:52:07 AM
-    Author     : Ferdy
+ * @author Ferdy Anata, Zhengjie Huang
+ * Created on: 23/04/2018, 12:52:07 AM
+ * Description: Methods use for left frame and right frame
 */
 /**
  * @desc
- * Functions to display/hide products depending on the state
+ * minusQuantity and plusQuantity methods 
  */
-$(document).ready(function() {
-    $('.sub').hide();
-    $('.subSub').hide();
-
-    $('#menu li').hover(
-        // slideToggle(350) refers to animation speed.
-        function() {
-            $(this).children('.sub').stop().slideToggle(350);
-        },
-    
-        function() {
-            $(this).children('.sub').stop().delay(100).slideToggle(350);
-        }
-    );
-    
-    $('.sub li').hover(
-        function() {
-            $(this).children('.subSub').stop().slideToggle(150);
-        },
-        
-        function() {
-            $(this).children('.subSub').stop().delay(100).slideToggle(150);
-        }
-    );
-});
-
-
 function minusQuantity()
 {
     var box = document.getElementById("quantity_box");

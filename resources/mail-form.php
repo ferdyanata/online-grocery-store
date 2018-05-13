@@ -1,12 +1,18 @@
-<!-- 
-    @desc   
-    Emails the user the products that they've purchased  
+<!--
+* @author Ferdy Anata, Zhengjie Huang
+* Created on: 12/05/2018
+* Description: Triggers PHP's mailing function and displays the 
+* NOTE: To view all the details, email must be opened in the browser as it does not work
+* in some email management applications.
+* 
+* Reference: http://php.net/manual/en/function.mail.php
 -->
 
 <?php include_once 'includes/header.php' ?>
 
 <?php 
     session_start();
+    // Displays a confirmation message that the order was successful.
     echo "<div style='margin-left: 40%; margin-top: 15%;'>
     <h2>
         Thank You!
@@ -20,6 +26,7 @@
     </div>
     </div>";
     
+    // Retrieve values via name attribute
     if(isset($_POST["submit"])) {
         $mailTo = $_POST["email"]; 
         $subject = "Your shopping order has been placed!"; 
@@ -31,7 +38,8 @@
         $suburb = $_POST["suburb"]; 
         $country = $_POST["country"];
         $message = '';
-
+        
+        // Use '$message .=' to chain multiple HTML.
         $message .= " 
             <html>
             <head>
@@ -119,7 +127,7 @@
         $headers = "MIME-Version: 1.0" . "\r\n"; 
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
         
-        // More headers 
+        // More headers
         $headers .= 'From: <no-reply@onlinegrocerystore.com>' . "\r\n"; 
         
         mail($mailTo,$subject,$message,$headers); 

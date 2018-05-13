@@ -1,7 +1,7 @@
 <!--
-* @author Ferdy Anata
-* Created on: 22/04/2018
-* Description: Displays products on the left hand side of the web page where users will be able to choose amongst five categories.
+* @author Ferdy Anata, Zhengjie Huang
+* Created on: 27/04/2018
+* Description: Upon clicking the 'add button', products will be added to the cart.
 -->
 
 <?php require_once 'includes/db-controller.php' ?>
@@ -18,7 +18,7 @@ if(!empty($_GET["action"])) {
         // action attribute's value =add&code={$productId}
 	    case "add":
 		    if(!empty($_POST["quantity"])) {
-                // runQuery is a method in DBController()
+                // $_GET['code'] refers to the value in the action attribute of query-product-details
 			    $product = $db_handle->runQuery("SELECT * FROM products WHERE product_id=" . $_GET["code"]);
 			    $itemArray = array(
                     $product["product_id"]  =>  array(
@@ -28,18 +28,24 @@ if(!empty($_GET["action"])) {
                                                 'quantity'      =>  $_POST["quantity"], 
                                                 'unit_price'    =>  $product["unit_price"]));
                 
+                // Check if cart is not empty so we can return all keys in arrays
                 if(!empty($_SESSION["cart_item"])) {
-                    if(in_array($product["product_id"],array_keys($_SESSION["cart_item"]))) {
+                    // Check if product_id exists in the array and returns all keys in array
+                    if(in_array($product["product_id"], array_keys($_SESSION["cart_item"]))) {
+                        // Updates the quantity in the cart, otherwise it will append to next line
                         foreach ($_SESSION["cart_item"] as $key => $val) {
                             if ($product["product_id"] == $key) {
                                 $_SESSION["cart_item"][$key]['quantity'] += $_POST["quantity"];
+                                // Display message if the user tries to order more than what is available in stock
                                 if ($_SESSION["cart_item"][$key]['quantity'] > $product["in_stock"]) {
                                     echo "<script type='text/javascript'>swal('Oops!','Not enough in stock!', 'warning')</script>";
                                     $_SESSION["cart_item"][$key]['quantity'] = $product["in_stock"];
                                 }
                             }
                         }
-                    } else {
+                    } 
+                    else {
+                        // If cart is empty then add and display on bottom right frame
                         $_SESSION["cart_item"][$product["product_id"]] = array(
                                                 'product_name'  =>  $product["product_name"],
                                                 'product_id'    =>  $product["product_id"], 
@@ -47,7 +53,8 @@ if(!empty($_GET["action"])) {
                                                 'quantity'      =>  $_POST["quantity"], 
                                                 'unit_price'    =>  $product["unit_price"]);
                     }
-                } else {
+                }
+                else {
                     $_SESSION["cart_item"] = $itemArray;
                 }
             }
@@ -57,8 +64,9 @@ if(!empty($_GET["action"])) {
             break;	
     }
 }
+
 echo "<h2 class='ui dividing header'>Your cart</h2>";
-// Loops through the array in cart and display it
+// Loops through the array in cart and display it in bottom right frame
 if(isset($_SESSION["cart_item"])) {
     echo "
         <div class='ui vertically divided grid'>
@@ -88,8 +96,7 @@ if(isset($_SESSION["cart_item"])) {
                             <div class='quantity'>$".
                                 $item['unit_price']*$item['quantity']."
                             </div>
-                        </div>
-                    ";
+                        </div>";
     }
 }
 
@@ -98,13 +105,10 @@ if(!isset($_SESSION["cart_item"])) {
 }
 
 if(!isset($_SESSION["cart_item"])) {
-        echo "  </div>
-                <div class='column'>
-                    <a href='#'><button class='positive ui button' 
-                    onclick='javascript:displayWarning()'><i class='cart arrow down icon'></i>Checkout</button></a>
-                </div>
-            </div>
-        </div>";
+        echo "<div class='column'>
+                <a href='#'><button class='positive ui button' 
+                onclick='javascript:displayWarning()'><i class='cart arrow down icon'></i>Checkout</button></a>
+              </div>";
 } else {
         echo "  </div>
                 <div class='column'>

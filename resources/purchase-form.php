@@ -1,3 +1,10 @@
+<!--
+* @author Ferdy Anata, Zhengjie Huang
+* Created on: 27/04/2018
+* Description: Displays shipping address form to fill out by the user on the left frame and
+* shows what the user has purchased on the right frame.
+-->
+
 <?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 
