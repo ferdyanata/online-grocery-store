@@ -64,11 +64,11 @@ if(isset($_SESSION["cart_item"])) {
         <div class='ui vertically divided grid'>
             <div class='two column row'>
                     <div class='column'>
-                        <div id='head' class='item'>
-                                <div class='description'> 
+                        <div  class='item'>
+                                <div class='quantity' id='deshead'> 
                                     Products
                                 </div> 
-                                <div class='quantity'>
+                                <div class='quantity' id='quantityhead'>
                                     Quantity
                                 </div>
                                 <div class='quantity'>

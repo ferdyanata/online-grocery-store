@@ -69,14 +69,14 @@
                 session_start();
                 $totalAmount = 0;
                 if(isset($_SESSION["cart_item"])) {
-                    echo "<div id='head' class='item'>
-                            <div class='description'> 
+                    echo "<div class='item'>
+                            <div class='quantity' id='deshead'> 
                                 Products
                             </div> 
-                            <div class='quantity'>
+                            <div class='quantity' id='quantityhead'>
                                 Quantity
                             </div>
-                            <div id='priceHeader' class='quantity'>
+                            <div class='quantity'>
                                 Price
                             </div>
                           </div>";

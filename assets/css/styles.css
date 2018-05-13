@@ -16,9 +16,12 @@
   display: flex;
 }
 
-#head .description .quantity{
-  height: 20px;
-  display: flex;
+#quantityhead{
+  width: 40px;
+}
+
+#deshead{
+  width: 80px;
 }
 
 
