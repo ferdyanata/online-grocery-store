@@ -1,3 +1,11 @@
+<!--
+* @author Ferdy Anata, Zhengjie Huang
+* Created on: 07/05/2018
+* Description: Queries the database to search for product id upon clicking on any
+* of the products in view-products.php
+* Reference: https://phppot.com/php/simple-php-shopping-cart/
+-->
+
 <?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 <!-- 
@@ -5,10 +13,9 @@
     Creates a query from the products table for product_name and unit_price
     based on the productId.
 -->
-<?php 
+<?php
 
-$productId = (isset($_GET['productId']) ? $_GET['productId'] : null); 
- 
+$productId = (isset($_GET['productId']) ? $_GET['productId'] : null);
 $query_string = 'SELECT * FROM products WHERE product_id='.$productId;
 $result = mysqli_query($connection, $query_string);
 $row = mysqli_fetch_assoc($result);

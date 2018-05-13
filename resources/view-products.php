@@ -1,5 +1,10 @@
-<?php include_once 'includes/header.php' ?>
+<!--
+* @author Ferdy Anata, Zhengjie Huang
+* Created on: 27/04/2018
+* Description: Display of products heirarchy on the left frame.
+-->
 
+<?php include_once 'includes/header.php' ?>
 
 <nav id="menu">
     <ul class="parent-menu">
@@ -7,6 +12,7 @@
             <ul>
                 <li><a href="#">Cheddar Cheese</a>
                     <ul>
+                        <!-- Value is used to query product_id in database -->
                         <li value="3000" onclick="javascript:displayDetails(this.value)"><a href="#">500 gram</a></li>
                         <li value="3001" onclick="javascript:displayDetails(this.value)"><a href="#">1000 gram</a></li>
                     </ul>
