@@ -23,7 +23,7 @@
 
 
 .item {
-  border-bottom:  1px solid rgb(238, 241, 243);
+  border-bottom:  1px solid rgb(209, 210, 211);
 }
 
 /* Buttons -  Delete and Like */
@@ -149,8 +149,6 @@ input:focus {
      color: red;
  }
 
-
-
  /* For menu*/
 
 #menu ul li:hover>ul {
@@ -261,4 +259,8 @@ html body {
 .ui.grid > [class*="two column"].row > .column {
   width: 50% !important;
   padding-left: 25px;
+}
+
+#priceHeader {
+  margin-left: -35px;
 }

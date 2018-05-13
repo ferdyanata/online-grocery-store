@@ -5,7 +5,7 @@
     <div class="two column row">
         <div class="container column">
             <form class="ui form" id="checkoutForm" action="mail-form.php" method="POST">
-                <h4 class="ui dividing header">Shipping Information</h4>
+                <h2 class="ui dividing header">Shipping Information</h2>
                 <div class="field">
                     <label>Name<span class="asterisks">*</span></label>
                     <div class="three fields">
@@ -60,6 +60,7 @@
                 <button class="ui blue button" name="submit" type="submit"><i class="credit card outline icon"></i>Purchase</button>
             </form>
         </div>
+        
         <div class="column">
             <h2 class="ui dividing header">Your items</h2>
             <?php
@@ -72,8 +73,8 @@
                             <div class='quantity'>
                                 Quantity
                             </div>
-                            <div class='quantity'>
-                            Price
+                            <div id='priceHeader' class='quantity'>
+                                Price
                             </div>
                           </div>";
                     foreach ($_SESSION["cart_item"] as $item) {
@@ -89,7 +90,7 @@
                             <div class='quantity'>$".
                                 $item['unit_price']*$item['quantity']."
                             </div>
-                            </div>";
+                         </div>";
                     }
                 }   
             ?>

@@ -6,23 +6,7 @@
 <?php include_once 'includes/header.php' ?>
 
 <?php 
-    
     session_start();
-    // Retains the cart items and displays it in the email
-    if(isset($_SESSION["cart_item"])) {
-        foreach ($_SESSION["cart_item"] as $item) {
-    ?>
-        <div id="view-cart-div">
-            <tr>
-                <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["product_name"]; ?></strong></td>
-                <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["product_id"]; ?></td>
-                <td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>
-                <td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "$".$item["unit_price"]; ?></td>
-            </tr>
-        </div>
-    <?php
-        }
-    }
 
     if(isset($_POST["submit"])) {
         $mailTo = $_POST["email"]; 
@@ -34,69 +18,98 @@
         $state = $_POST["state"]; 
         $suburb = $_POST["suburb"]; 
         $country = $_POST["country"];
-    
+        $message = '';
+
+        $message .= " 
+            <html>
+            <head>
+                <title>Online Grocery Store</title>
+            </head>
+
+            <body>
+                <p>Hey {$firstName},</p>
+                <p>Good news, your order has been placed with us. You can check your order below.</p>
+                <p>Thanks for shopping with us,</p>
+                <p>The Online Grocery Store</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style='font-weight: bold'>
+                                Shipping Address
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{$firstName} {$lastName}</td>
+                        </tr>
+                        <tr>
+                            <td>{$address}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {$suburb}, {$postcode} {$state}, {$country}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr style='color: rgb(209, 210, 211)'>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style='font-weight:bold;padding:5px 10px 5px 10px!important;color:#333333;'>
+                                Description
+                            </td>
+                            <td style='font-weight:bold;padding:5px 10px 5px 10px!important;color:#333333;'>
+                                Unit Price
+                            </td>
+                            <td style='font-weight:bold;padding:5px 10px 5px 10px!important;color:#333333;'>
+                                Qty
+                            </td>
+                            <td style='font-weight:bold;padding:5px 10px 5px 10px!important;color:#333333;'>
+                                Amount
+                            </td>
+                        </tr>";
+
+        $totalAmount = 0;
+
+        if(isset($_SESSION["cart_item"])){
+            foreach ($_SESSION["cart_item"] as $item) {
+                $message .= "<tr>
+                                <td>{$item['product_name']}</td>
+                                <td>{$item['quantity']}</td>
+                                <td>{$item['unit_quantity']}</td>
+                                <td style='font-weight: bold;'>
+                                $" . $item['unit_price']*$item['quantity'] .
+                                "</td>
+                            </tr>";
+                
+                $totalAmount += $item['unit_price']*$item['quantity'];
+            }
+        }
         
-        $message = " 
-        <html> 
-    
-        <head> 
-            <title>Online Grocery Store</title> 
-        </head> 
-        
-        <body> 
-            <p>Hey {$firstName},</p> 
-            <p>Good news, your order has been placed with us. You can check your order below</p> 
-            <p>Have a great day,</p> 
-            <p>The Online Grocery Store</p> 
-            <table>
-                <tr>
-                    <thead> 
-                        Shipping Address 
-                    </thead> 
-                </tr>
-                <tr> 
-                    <td>{$firstName}</td> 
-                    <td>{$lastName}</td> 
-                </tr> 
-                <tr> 
-                    <td>{$address}</td>
-                </tr> 
-                <tr>
-                <td>
-                    {$suburb},
-                </td>
-                <td>
-                    {$postcode} {$state},
-                </td>
-                <td>
-                    {$country}
-                </td>
-            </tr>
-        </table>
-        <hr>
-        <table>
-            <tr>
-                <thead>
-                    Item details
-                </thead>
-            </tr>
-        </table>
-    </body>
-    
-    </html>
-        "; 
-        
+        $message .= "
+                    <tr>
+                        <td style='margin-right: 100%;'>
+                            Total Amount
+                        </td>
+                        <td style='font-weight: bold;'>
+                            ${$totalAmount}
+                        </td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </body>
+                </html>";
+
         // Always set content-type when sending HTML email 
         $headers = "MIME-Version: 1.0" . "\r\n"; 
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
         
         // More headers 
         $headers .= 'From: <no-reply@onlinegrocerystore.com>' . "\r\n"; 
-        // $headers .= 'Cc: myboss@example.com' . "\r\n"; 
         
         mail($mailTo,$subject,$message,$headers); 
     }
-    
+
 ?> 
 
 <?php include_once 'includes/footer.php' ?>
