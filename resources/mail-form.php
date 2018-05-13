@@ -7,7 +7,19 @@
 
 <?php 
     session_start();
+    echo "<div style='margin-left: 40%; margin-top: 15%;'>
+    <h2>
+        Thank You!
+    </h2>
 
+    <div class='ui success message' style='width: 35%'>
+            <div class='header'>
+            Your purchase was successful.
+            </div>
+            <p>Please check your email for details about your order. Click <a href='../index.php'>here</a> to return shopping.</p>
+    </div>
+    </div>";
+    
     if(isset($_POST["submit"])) {
         $mailTo = $_POST["email"]; 
         $subject = "Your shopping order has been placed!"; 
