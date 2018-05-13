@@ -9,36 +9,41 @@
 
 <?php
 session_start();
+// DBController is a another connection to the database, but it is formed 
+// as classes to make product queries more readable.
 $db_handle = new DBController();
+// Checks for action attribute in query-product-details is not empty
 if(!empty($_GET["action"])) {
     switch($_GET["action"]) {
+        // action attribute's value =add&code={$productId}
 	    case "add":
 		    if(!empty($_POST["quantity"])) {
+                // runQuery is a method in DBController()
 			    $product = $db_handle->runQuery("SELECT * FROM products WHERE product_id=" . $_GET["code"]);
 			    $itemArray = array(
                     $product["product_id"]  =>  array(
                                                 'product_name'  =>  $product["product_name"],
-                                                'product_id'    =>  $product["product_id"], 
+                                                'product_id'    =>  $product["product_id"],
+                                                'unit_quantity' =>  $product["unit_quantity"],
                                                 'quantity'      =>  $_POST["quantity"], 
                                                 'unit_price'    =>  $product["unit_price"]));
-			
+                
                 if(!empty($_SESSION["cart_item"])) {
                     if(in_array($product["product_id"],array_keys($_SESSION["cart_item"]))) {
-                        echo "merge!";
                         foreach ($_SESSION["cart_item"] as $key => $val) {
                             if ($product["product_id"] == $key) {
                                 $_SESSION["cart_item"][$key]['quantity'] += $_POST["quantity"];
                                 if ($_SESSION["cart_item"][$key]['quantity'] > $product["in_stock"]) {
-                                    echo "<script type='text/javascript'>alert('Not enough in stock!')</script>";
+                                    echo "<script type='text/javascript'>swal('Oops!','Not enough in stock!', 'warning')</script>";
                                     $_SESSION["cart_item"][$key]['quantity'] = $product["in_stock"];
                                 }
                             }
                         }
-                        
                     } else {
                         $_SESSION["cart_item"][$product["product_id"]] = array(
                                                 'product_name'  =>  $product["product_name"],
                                                 'product_id'    =>  $product["product_id"], 
+                                                'unit_quantity' =>  $product["unit_quantity"],
                                                 'quantity'      =>  $_POST["quantity"], 
                                                 'unit_price'    =>  $product["unit_price"]);
                     }
@@ -52,33 +57,65 @@ if(!empty($_GET["action"])) {
             break;	
     }
 }
-
+echo "<h2 class='ui dividing header'>Your cart</h2>";
+// Loops through the array in cart and display it
 if(isset($_SESSION["cart_item"])) {
+    echo "
+        <div class='ui vertically divided grid'>
+            <div class='two column row'>
+                    <div class='column'>
+                        <div id='head' class='item'>
+                                <div class='description'> 
+                                    Products
+                                </div> 
+                                <div class='quantity'>
+                                    Quantity
+                                </div>
+                                <div class='quantity'>
+                                    Price
+                                </div>
+                            </div>";
     foreach ($_SESSION["cart_item"] as $item) {
-?>
-    <div id="view-cart-div">
-        <tr>
-            <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["product_name"]; ?></strong></td>
-            <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["product_id"]; ?></td>
-            <td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>
-            <td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "$".$item["unit_price"]; ?></td>
-        </tr>
-    </div>
-<?php
+                echo "<div class='item'>
+                            <div class='description'> 
+                                <span>" . $item['product_name'] ."</span>
+                                <span>" . $item['unit_quantity'] ."</span>
+                                <span>$". $item['unit_price'] ."</span>
+                            </div> 
+                            <div class='quantity'>"
+                                .$item['quantity'].   
+                            "</div>
+                            <div class='quantity'>$".
+                                $item['unit_price']*$item['quantity']."
+                            </div>
+                        </div>
+                    ";
     }
 }
 
 if(!isset($_SESSION["cart_item"])) {
-    echo "<div> Your cart is empty now </div>";
+    echo "<div>Your cart is currently empty.</div>";
 }
-
-echo "<div> <a href='view-cart.php?action=empty'> Clear cart </a> </div>";
 
 if(!isset($_SESSION["cart_item"])) {
-    echo "<div> <button onclick='javascript:displayWarning()'><a href='#'>Checkout</a></button> </div>";
+        echo "  </div>
+                <div class='column'>
+                    <a href='#'><button class='positive ui button' 
+                    onclick='javascript:displayWarning()'><i class='cart arrow down icon'></i>Checkout</button></a>
+                </div>
+            </div>
+        </div>";
 } else {
-    echo "<div> <button><a href='purchase-form.php' target='_top'>Checkout</a></button> </div>";
-}
+        echo "  </div>
+                <div class='column'>
+                    <a href='purchase-form.php' target='_top'><button class='positive ui button'>
+                    <i class='cart arrow down icon'></i>Checkout</button></a>
+                    <a href='view-cart.php?action=empty'> <button class='ui red button'>
+                    <i class='ban icon'></i> Clear cart </button></a>
+                </div>
+            </div>
+        </div>";
+    }
 ?>
 
 <?php include_once 'includes/footer.php' ?>

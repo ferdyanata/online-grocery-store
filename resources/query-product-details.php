@@ -13,8 +13,6 @@ $query_string = 'SELECT * FROM products WHERE product_id='.$productId;
 $result = mysqli_query($connection, $query_string);
 $row = mysqli_fetch_assoc($result);
 
-
-
 echo
 "<form action='view-cart.php?action=add&code={$productId}' method='POST' target='frame-view-cart' onsubmit='return validateQuantity(".$row['in_stock'].")'>" .
     "<div class='shopping-cart'>".
