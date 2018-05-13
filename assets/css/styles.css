@@ -18,10 +18,20 @@
 
 #quantityhead{
   width: 40px;
+  padding-top: 0px;
+  height: 10px;
+  color: green;
 }
 
 #deshead{
   width: 80px;
+  height: 10px;
+  padding-top: 0px;
+  color: green;
+}
+
+#narrowitem{
+  height: 20px;
 }
 
 
