@@ -8,7 +8,6 @@
 <?php include_once 'config.php' ?>
 <?php include_once 'includes/header.php' ?>
 
-<?php session_start(); ?>
 <div class="ui vertically divided grid">
     <div class="two column row">
         <div class="container column">
@@ -74,6 +73,7 @@
         <div class="column">
             <h2 class="ui dividing header">Your items</h2>
             <?php
+                session_start();
                 $totalAmount = 0;
                 if(isset($_SESSION["cart_item"])) {
                     echo "<div class='item' id='narrowitem'>
