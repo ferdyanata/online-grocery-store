@@ -12,14 +12,14 @@ function validateForm() {
     }
    
     // // Check if postcode is valid. Numbers from 1 - 9 and only allow 4 digits  
-    var postcode_data = document.getElementById("postcode");
+    // var postcode_data = document.getElementById("postcode");
 
-    if(isValidRange(postcode_data.value,"0123456789")){
-        return true;
-    }else{
-        swal("Oops!", "One or more fields are incorrect!", "warning");
-        return false;   
-    }
+    // if(isValidRange(postcode_data.value,"0123456789")){
+    //     return true;
+    // }else{
+    //     swal("Oops!", "Postcode is incorrect!", "warning");
+    //     return false;   
+    // }
 }
 
 function hasBlanks() {
@@ -33,16 +33,6 @@ function hasBlanks() {
         }
     }
     return false;
-}
-
-function isPostcodeValid(){
-    var postcodeField = document.getElementById("postcode").value;    
-    var postcodeRE = /\d{4}/;
-    var match = postcodeRE.match(postcodeField);
-    alert("postcode regex works");
-    // if(!match){
-    //     return true;
-    // }
 }
 
 function isValidRange(strCheck, validChars) {

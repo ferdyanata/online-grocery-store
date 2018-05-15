@@ -349,3 +349,7 @@ html body {
     font-size: 1.5em;
   }
 }
+
+body.pushable > .pusher {
+  background: #1B1C1D !important;
+}
