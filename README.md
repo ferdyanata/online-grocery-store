@@ -1,5 +1,4 @@
 # Online Grocery Store with a Graphical User Interface
-Major project from Programming on the Internet.
 
 ## Demo
 http://www-student.it.uts.edu.au/~fanata/assignment1/
